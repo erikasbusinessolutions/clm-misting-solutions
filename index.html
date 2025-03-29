@@ -8,11 +8,43 @@
 		<!-- Load Google Font (Roboto) to match your Google Site's style -->
 		<link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
 		<style>
-			/* Global styling with Roboto font */
+			/* Global Styles */
 			body, h1, h2, h3, p, a {
 				font-family: 'Roboto', sans-serif;
+				margin: 0;
+				padding: 0;
 			}
-
+			#page-wrapper {
+				overflow-x: hidden;
+			}
+			
+			/* Header */
+			#header {
+				background: #333;
+				padding: 20px;
+				text-align: center;
+			}
+			#header h1 a {
+				color: #fff;
+				text-decoration: none;
+				font-size: 32px;
+			}
+			#nav ul {
+				list-style: none;
+				padding: 0;
+				margin: 20px 0 0;
+				display: flex;
+				justify-content: center;
+			}
+			#nav ul li {
+				margin: 0 10px;
+			}
+			#nav ul li a {
+				color: #fff;
+				text-decoration: none;
+				font-size: 18px;
+			}
+			
 			/* Hero Section */
 			.hero-section {
 				position: relative;
@@ -25,14 +57,13 @@
 				justify-content: center;
 				gap: 20px;
 				width: 100%;
-				overflow: hidden;
-				padding: 20px 20px;
+				padding: 20px;
 			}
 			@media (min-width: 769px) {
 				.hero-section { min-height: 100vh; }
 			}
 			@media (max-width: 768px) {
-				.hero-section { height: auto; padding: 0px; gap: 10px; }
+				.hero-section { height: auto; padding: 0; gap: 10px; }
 			}
 			.hero-column {
 				flex: 1;
@@ -78,10 +109,9 @@
 				border-radius: 8px;
 				text-decoration: none;
 				transition: background 0.3s ease, box-shadow 0.3s ease;
-				max-width: 90%;
 				text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
 				box-shadow: inset 0px -2px 4px rgba(0,0,0,0.2),
-							inset 0px 2px 4px rgba(255,255,255,0.15);
+				            inset 0px 2px 4px rgba(255,255,255,0.15);
 			}
 			.hero-button:hover { background-color: #FFA733; }
 			@media (max-width: 768px) {
@@ -96,38 +126,46 @@
 			@media (max-width: 768px) {
 				.hero-gif { max-width: 100%; }
 			}
-
-			/* Content Section Styles */
+			
+			/* Section Styles */
 			.section {
 				padding: 60px 20px;
 				text-align: center;
+				border-bottom: 1px solid #e0e0e0;
 			}
 			.section h2 {
 				font-size: 32px;
 				margin-bottom: 20px;
+				color: #333;
 			}
 			.section p {
 				font-size: 18px;
 				max-width: 800px;
 				margin: 0 auto 20px;
+				color: #555;
+				line-height: 1.6;
 			}
-			.services-list, .projects-list {
+			/* Sectors list styling */
+			.sectors-list {
 				display: flex;
 				flex-wrap: wrap;
 				justify-content: center;
 				gap: 20px;
 			}
-			.service-item, .project-item {
-				flex: 1 1 300px;
-				background: #f4f4f4;
+			.sector-item {
+				flex: 1 1 250px;
+				background: #f9f9f9;
 				padding: 20px;
 				border-radius: 8px;
+				box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 			}
-			.service-item h3, .project-item h3 {
+			.sector-item h3 {
 				margin-top: 0;
+				font-size: 22px;
+				color: #333;
 			}
-
-			/* Footer Enhancements */
+			
+			/* Footer */
 			#footer {
 				background: #333;
 				color: #fff;
@@ -137,6 +175,30 @@
 			#footer .icons li {
 				display: inline-block;
 				margin-right: 10px;
+			}
+			#footer .container {
+				max-width: 1000px;
+				margin: auto;
+			}
+			#footer .row {
+				display: flex;
+				flex-wrap: wrap;
+				justify-content: space-between;
+			}
+			#footer h3 {
+				font-size: 20px;
+				margin-bottom: 10px;
+			}
+			#footer p {
+				font-size: 16px;
+				line-height: 1.5;
+			}
+			#footer .copyright {
+				text-align: center;
+				padding-top: 20px;
+				border-top: 1px solid #444;
+				margin-top: 20px;
+				font-size: 14px;
 			}
 		</style>
 	</head>
@@ -148,10 +210,11 @@
 				<nav id="nav">
 					<ul>
 						<li class="current"><a href="index.html">Home</a></li>
-						<li><a href="#about">About Us</a></li>
-						<li><a href="#services">Services</a></li>
-						<li><a href="#projects">Projects</a></li>
-						<li><a href="#contact">Contact</a></li>
+						<li><a href="#why-choose">Why Choose</a></li>
+						<li><a href="#performance">Performance</a></li>
+						<li><a href="#customizable">Customizable</a></li>
+						<li><a href="#target-sectors">Sectors</a></li>
+						<li><a href="#installation">Installation</a></li>
 					</ul>
 				</nav>
 			</div>
@@ -178,65 +241,55 @@
 				</div>
 			</section>
 			
-			<!-- About Us Section -->
-			<section id="about" class="section">
-				<h2>About CLM Misting Solutions</h2>
+			<!-- Section 1: Why Choose CLM Misting Solutions? -->
+			<section id="why-choose" class="section">
+				<h2>Why Choose CLM Misting Solutions?</h2>
 				<p>
-					At CLM Misting Solutions, we’re dedicated to delivering premium mosquito control that enhances your outdoor lifestyle. Our state-of-the-art misting systems ensure your spaces remain safe, comfortable, and pest-free.
+					CLM’s high-quality professional misting system delivers automated mosquito and fly protection with minimal upkeep, ensuring a comfortable outdoor space year-round. The system can be installed professionally or by a DIY Homeowner.
 				</p>
 			</section>
 			
-			<!-- Services Section -->
-			<section id="services" class="section">
-				<h2>Our Services</h2>
+			<!-- Section 2: Built for Performance, Designed for Convenience -->
+			<section id="performance" class="section">
+				<h2>Built for Performance, Designed for Convenience</h2>
 				<p>
-					Discover our range of services designed to keep your outdoor areas enjoyable and mosquito-free.
+					Not all misting systems are created equal. CLM’s advanced misting technology delivers an ultra-fine mist that targets mosquitoes and flies. Our durable, weather-resistant components are built to last, ensuring reliable, long-term protection.
 				</p>
-				<div class="services-list">
-					<div class="service-item">
-						<h3>Misting System Installation</h3>
-						<p>Professional installation of advanced misting systems tailored to your environment.</p>
+			</section>
+			
+			<!-- Section 3: Customizable Protection for Every Space -->
+			<section id="customizable" class="section">
+				<h2>Customizable Protection for Every Space</h2>
+				<p>
+					Every installation is unique, and so is every mosquito and fly misting system. That’s why we provide customized solutions tailored to your property. Whether you need coverage for a small patio, residential backyard, an equine facility, or a commercial space, our system is designed to adapt to your specific needs. With flexible configurations, we ensure targeted protection exactly where you need it most.
+				</p>
+			</section>
+			
+			<!-- Section 4: Our Target Sectors -->
+			<section id="target-sectors" class="section">
+				<h2>Our Target Sectors</h2>
+				<div class="sectors-list">
+					<div class="sector-item">
+						<h3>Residential Homes</h3>
+						<p>Enjoy your backyard without the hassle of mosquitoes.</p>
 					</div>
-					<div class="service-item">
-						<h3>Maintenance & Support</h3>
-						<p>Regular service and support to ensure your system operates flawlessly year-round.</p>
+					<div class="sector-item">
+						<h3>Equine Centers</h3>
+						<p>Large-scale solutions for lasting protection against mosquitoes and flies.</p>
 					</div>
-					<div class="service-item">
-						<h3>Custom Solutions</h3>
-						<p>Personalized solutions to meet the unique needs of your outdoor space.</p>
+					<div class="sector-item">
+						<h3>Outdoor Dining & Restaurants</h3>
+						<p>Keep customers comfortable and pest-free.</p>
 					</div>
 				</div>
 			</section>
 			
-			<!-- Projects Section -->
-			<section id="projects" class="section">
-				<h2>Our Projects</h2>
+			<!-- Section 5: Fast, Simple Installation -->
+			<section id="installation" class="section">
+				<h2>Fast, Simple Installation</h2>
 				<p>
-					Take a look at some of our recent installations where we transformed outdoor spaces.
+					Get set up in no time! Our system is designed for easy DIY installation or professional setup based on your needs. With straightforward instructions and expert support, you’ll have your misting system up and running in no time—keeping mosquitoes and flies away from day one.
 				</p>
-				<div class="projects-list">
-					<div class="project-item">
-						<img src="images/project1.jpg" alt="Residential Installation" style="width:100%; border-radius: 8px;">
-						<h3>Residential Installation</h3>
-						<p>A custom misting system designed for a private home, ensuring year-round comfort.</p>
-					</div>
-					<div class="project-item">
-						<img src="images/project2.jpg" alt="Commercial Setup" style="width:100%; border-radius: 8px;">
-						<h3>Commercial Setup</h3>
-						<p>Expertly installed systems for commercial properties that create a welcoming environment.</p>
-					</div>
-				</div>
-			</section>
-			
-			<!-- Contact Section -->
-			<section id="contact" class="section">
-				<h2>Contact Us</h2>
-				<p>
-					Ready to upgrade your outdoor space? Get in touch with us today to learn more about our solutions.
-				</p>
-				<a href="https://sites.google.com/view/clmmistingsolutions-testmode/contact-us?" 
-				   target="_blank" 
-				   class="hero-button">Contact Us</a>
 			</section>
 			
 			<!-- Footer -->

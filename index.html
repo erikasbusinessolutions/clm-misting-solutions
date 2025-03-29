@@ -5,7 +5,7 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
-		<!-- Load Google Font (Roboto) to match your Google Site's style -->
+		<!-- Load Google Font (Roboto) -->
 		<link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
 		<style>
 			/* Global Styles */
@@ -45,7 +45,11 @@
 				font-size: 18px;
 			}
 			
-			/* Hero Section */
+			/* Banner & Hero Section Overrides */
+			#banner {
+				position: relative !important; /* Ensure banner is in normal flow */
+				z-index: 1 !important;
+			}
 			.hero-section {
 				position: relative;
 				background: linear-gradient(to bottom, rgba(0,119,200,0.9), rgba(0,174,239,0.9));
@@ -127,11 +131,14 @@
 				.hero-gif { max-width: 100%; }
 			}
 			
-			/* Section Styles */
+			/* Content Section Styles */
 			.section {
 				padding: 60px 20px;
 				text-align: center;
 				border-bottom: 1px solid #e0e0e0;
+				position: relative;
+				z-index: 0;
+				background: #fff; /* Ensure sections have a white background */
 			}
 			.section h2 {
 				font-size: 32px;
@@ -145,7 +152,8 @@
 				color: #555;
 				line-height: 1.6;
 			}
-			/* Sectors list styling */
+			
+			/* Sectors List */
 			.sectors-list {
 				display: flex;
 				flex-wrap: wrap;

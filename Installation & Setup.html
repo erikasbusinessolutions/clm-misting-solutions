@@ -1,1 +1,325 @@
-
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>FAQ & Installation - CLM Misting Solutions</title>
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <!-- Load Google Fonts: Montserrat for headings, Open Sans for body text -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+      /* ---------- Common Styles (Same as Other Pages) ---------- */
+      body, html {
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
+        background-color: #0077c8; /* Frame color */
+      }
+      h1, h2, h3, .heading {
+        font-family: 'Montserrat', sans-serif;
+      }
+      p, .normal-text {
+        font-family: 'Open Sans', sans-serif;
+      }
+      a {
+        text-decoration: none;
+      }
+      /* Header */
+      header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background-color: rgba(242,242,242,0.9);
+        padding: 10px 20px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+        transition: background-color 0.3s ease;
+      }
+      header .logo {
+        font-size: 28px;
+        font-weight: bold;
+        color: #0077c8;
+      }
+      nav ul {
+        display: flex;
+        gap: 15px;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+      nav ul li a {
+        font-size: 20px;
+        color: #0077c8;
+        font-weight: 600;
+      }
+      nav ul li a.active {
+        text-decoration: underline;
+        text-decoration-thickness: 3px;
+        text-decoration-color: #0077c8;
+      }
+      header.scrolled {
+        background-color: #0077c8;
+      }
+      header.scrolled .logo,
+      header.scrolled nav ul li a {
+        color: #fff;
+      }
+      /* Main content container (frame) */
+      #page-wrapper {
+        background-color: #f2f2f2;
+        margin: 80px auto 20px; /* Top margin to offset fixed header */
+        max-width: 1200px;
+        padding: 20px;
+        box-sizing: border-box;
+      }
+      /* Divider */
+      .divider,
+      hr.divider {
+        height: 4px;
+        background-color: #008fd5;
+        border: none;
+        margin: 40px 0;
+      }
+      
+      /* ---------- Installation Page Specific Styles ---------- */
+      .intro-text {
+        font-size: 20px;
+        text-align: center;
+        color: #444;
+        max-width: 800px;
+        margin: 0 auto 20px;
+      }
+      .dropdown-button {
+        width: 100%;
+        padding: 15px;
+        font-size: 20px;
+        font-weight: bold;
+        background: #0077c8;
+        color: white;
+        border: none;
+        cursor: pointer;
+        border-radius: 8px;
+        text-align: left;
+        margin-top: 10px;
+        transition: background 0.3s ease;
+        font-family: 'Montserrat', sans-serif;
+      }
+      .dropdown-button:hover {
+        background: #005b9f;
+      }
+      .dropdown-content {
+        display: none;
+        padding: 20px;
+        background: #F8F8F8;
+        border-radius: 8px;
+        margin-top: 5px;
+        font-family: 'Open Sans', sans-serif;
+      }
+      .dropdown-content ul {
+        font-size: 18px;
+        color: #444;
+        margin: 0;
+        padding-left: 20px;
+        list-style-type: disc;
+      }
+      .dropdown-content p {
+        font-size: 18px;
+        text-align: center;
+        color: #444;
+        margin-top: 15px;
+      }
+      .cta-section {
+        text-align: center;
+        padding: 20px;
+      }
+      .cta-section h2 {
+        color: #005C89;
+        font-size: 28px;
+        margin-bottom: 10px;
+        font-family: 'Montserrat', sans-serif;
+      }
+      .cta-section p {
+        font-size: 18px;
+        color: #444;
+        margin-bottom: 20px;
+        font-family: 'Open Sans', sans-serif;
+      }
+      .cta-button {
+        display: inline-block;
+        background: #65C51B;
+        color: white;
+        padding: 15px 30px;
+        font-size: 20px;
+        font-weight: bold;
+        border: none;
+        cursor: pointer;
+        border-radius: 8px;
+        text-decoration: none;
+        transition: background 0.3s ease, box-shadow 0.3s ease;
+        text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+        box-shadow: inset 0px -2px 4px rgba(0,0,0,0.2),
+                    inset 0px 2px 4px rgba(255,255,255,0.15);
+        font-family: 'Montserrat', sans-serif;
+      }
+      .cta-button:hover {
+        background: #FFA733;
+      }
+      @media (max-width: 768px) {
+        .intro-text {
+          font-size: 14px;
+          margin-bottom: 10px;
+        }
+        .dropdown-button {
+          font-size: 12px;
+          padding: 10px;
+        }
+        .dropdown-content {
+          padding: 15px;
+        }
+        .dropdown-content ul {
+          font-size: 12px;
+        }
+        .dropdown-content p {
+          font-size: 10px;
+        }
+        .cta-section h2 {
+          font-size: 18px;
+        }
+        .cta-section p {
+          font-size: 12px;
+        }
+        .cta-button {
+          font-size: 12px;
+          padding: 10px 20px;
+        }
+      }
+    </style>
+    <script>
+      function toggleDropdown(id) {
+        var element = document.getElementById(id);
+        if (element.style.display === "none" || element.style.display === "") {
+          element.style.display = "block";
+        } else {
+          element.style.display = "none";
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <!-- Fixed Header -->
+    <header>
+      <div class="logo">CLM Misting Solutions</div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="installation.html" class="active">Installation &amp; Setup</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#contact">Contact Us</a></li>
+        </ul>
+      </nav>
+    </header>
+    
+    <!-- Main Content Container (Frame) -->
+    <div id="page-wrapper">
+      <!-- Introduction -->
+      <p class="intro-text">
+        CLM Misting Solutions offers support to DIY'ers and professional installers to help with the installation of our system. The high-level overview below helps facilitate the actual installation process and can be customized based on your level of expertise. Our goal is to provide a best-in-class experience and a system that protects outdoor spaces from mosquitoes and flies. Whether for residential backyards, horse barns, or outdoor dining areas, our expert team ensures full coverage, long-term reliability, and optimal system performance.
+      </p>
+      
+      <!-- Step-by-Step Installation Process -->
+      <button class="dropdown-button" onclick="toggleDropdown('installationProcess')">
+        ▶ Getting Started
+      </button>
+      <div id="installationProcess" class="dropdown-content">
+        <ul>
+          <li><strong>Site Evaluation &amp; Planning</strong>
+            <ul>
+              <li>Determine optimal coverage areas.</li>
+              <li>Inspect the property to identify mosquito breeding and resting sites.</li>
+              <li>Customize the layout for maximum effectiveness.</li>
+            </ul>
+          </li>
+          <li><strong>System Design &amp; Nozzle Placement</strong>
+            <ul>
+              <li>Place nozzles every 8 to 10 feet along fences, shaded areas, and eaves.</li>
+              <li>Select tubing colors that blend in with the surroundings (black, white, grey, brown, or tan).</li>
+            </ul>
+          </li>
+          <li><strong>Professional Installation &amp; Testing</strong>
+            <ul>
+              <li>Wall mount the misting system to the structure or tank mount if wall mounting is not optimal.</li>
+              <li>Place the 55-gallon poly drum reservoir directly below the unit for maximum performance.</li>
+              <li>Test the system to ensure proper mist distribution and optimal performance.</li>
+              <li>Provide customer training for confident system operation.</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      
+      <!-- Customization Section -->
+      <button class="dropdown-button" onclick="toggleDropdown('customization')">
+        ▶ Tailor Your Misting System to Your Needs
+      </button>
+      <div id="customization" class="dropdown-content">
+        <ul>
+          <li>✅ Residential Properties – Protects patios, pools, and yards.</li>
+          <li>✅ Barns &amp; Equine Centers – Controls flies and mosquitoes in horse stalls.</li>
+          <li>✅ Outdoor Dining &amp; Restaurants – Ensures a mosquito-free experience.</li>
+          <li>✅ Event Spaces – Perfect for weddings, venues, and resorts.</li>
+        </ul>
+      </div>
+      
+      <!-- What to Expect on Installation Day -->
+      <button class="dropdown-button" onclick="toggleDropdown('installationDay')">
+        ▶ Let's Begin Installation
+      </button>
+      <div id="installationDay" class="dropdown-content">
+        <ul>
+          <li><strong>🏡 Clear Your Space</strong>: Move furniture or obstacles from misting areas.</li>
+          <li><strong>📦 Take Inventory</strong>: Ensure you have all necessary tools (tubing cutters, PVC pipe if burying line, shovel, zip ties, fencing, misting system components, nozzles, tee connectors, risers, elbows, etc.).</li>
+          <li><strong>🔧 Act Like a Professional</strong>: Space out nozzles 8 to 10 feet apart before connecting the tubing. Dig trenches under gates and for risers if needed so you can continue installing without interruption.</li>
+          <li><strong>🛠 Final Testing</strong>: Once installation is complete, test the system to ensure optimal performance and adjust coverage as needed.</li>
+          <li><strong>📖 Customer Training</strong>: Learn how to operate, refill, and maintain your system.</li>
+        </ul>
+      </div>
+      
+      <!-- Schedule Your Installation CTA -->
+      <div class="cta-section">
+        <h2>Ready to Install Your Misting System?</h2>
+        <p><strong>📞 Call us at 903-578-6478</strong> or click below to contact us.</p>
+        <a href="https://sites.google.com/view/clmmistingsolutions-testmode/contact-us?" target="_blank" class="cta-button">
+          Contact Us
+        </a>
+      </div>
+    </div>
+    
+    <!-- JavaScript for Dropdown Toggle -->
+    <script>
+      function toggleDropdown(id) {
+        var element = document.getElementById(id);
+        if(element.style.display === "none" || element.style.display === "") {
+          element.style.display = "block";
+        } else {
+          element.style.display = "none";
+        }
+      }
+    </script>
+    
+    <!-- JavaScript for Header Scroll Effect -->
+    <script>
+      window.addEventListener('scroll', function(){
+        var header = document.querySelector('header');
+        if(window.scrollY > 50){
+          header.classList.add('scrolled');
+        } else {
+          header.classList.remove('scrolled');
+        }
+      });
+    </script>
+  </body>
+</html>

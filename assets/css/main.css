@@ -280,13 +280,14 @@ hr.divider {
   justify-content: center;
 }
 .three-column .target-item {
-  flex: 0 0 600px; /* Fixed width of 600px for each target item */
+  flex: 0 0 400px;       /* Fixed width of 400px for each target item */
+  max-width: 400px;      /* Restrict container to 400px */
   text-align: center;
   box-sizing: border-box;
 }
 .three-column .target-item img {
   width: 100%;
-  /* No max-width restriction so that the image occupies full 600px */
+  max-width: 600px;      /* All images will be up to 400px wide */
   height: auto;
   margin-bottom: 10px;
 }

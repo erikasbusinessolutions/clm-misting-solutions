@@ -118,7 +118,7 @@
           gap: 10px;
         }
       }
-      /* Updated hero-column: enforce a 50% basis */
+      /* Ensure each hero column takes 50% of the space */
       .hero-column {
         flex: 1 1 50%;
         max-width: 50%;
@@ -183,12 +183,14 @@
           font-size: 16px;
         }
       }
-      /* Updated hero-gif: prevent it from overflowing its column */
+      /* Updated hero-gif: set width to 100% with a max-width */
       .hero-gif {
-        width: auto;
-        max-width: 90%;
+        display: block;
+        width: 100%;
+        max-width: 500px;
         height: auto;
         border-radius: 10px;
+        margin: 0 auto;
       }
       
       /* ---------- Section Base Styles ---------- */

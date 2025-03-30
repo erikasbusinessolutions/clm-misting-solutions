@@ -1,1 +1,438 @@
-
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>CLM Misting Solutions - Products</title>
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <!-- Load Google Fonts: Montserrat for headings, Open Sans for body text -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+      /* ---------- Global Styles ---------- */
+      body, html {
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
+        background-color: #0077c8; /* Frame color */
+      }
+      h1, h2, h3, .heading {
+        font-family: 'Montserrat', sans-serif;
+      }
+      p, .normal-text {
+        font-family: 'Open Sans', sans-serif;
+      }
+      a {
+        text-decoration: none;
+      }
+      
+      /* ---------- Header ---------- */
+      header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background-color: rgba(242,242,242,0.9);
+        padding: 10px 20px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+        transition: background-color 0.3s ease;
+      }
+      header .logo {
+        font-size: 28px;
+        font-weight: bold;
+        color: #0077c8;
+      }
+      nav ul {
+        display: flex;
+        gap: 15px;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+      nav ul li a {
+        font-size: 20px;
+        color: #0077c8;
+        font-weight: 600;
+      }
+      nav ul li a.active {
+        text-decoration: underline;
+        text-decoration-thickness: 3px;
+        text-decoration-color: #0077c8;
+      }
+      header.scrolled {
+        background-color: #0077c8;
+      }
+      header.scrolled .logo,
+      header.scrolled nav ul li a {
+        color: #fff;
+      }
+      
+      /* ---------- Main Content Container (Frame) ---------- */
+      #page-wrapper {
+        background-color: #f2f2f2;
+        margin: 80px auto 20px;
+        max-width: 1200px;
+        padding: 20px;
+        box-sizing: border-box;
+      }
+      
+      /* ---------- Dividers ---------- */
+      .divider,
+      hr.divider {
+        height: 4px;
+        background-color: #008fd5;
+        border: none;
+        margin: 40px 0;
+      }
+      
+      /* ---------- Products Section Styles ---------- */
+      /* Override product grid styles from the provided snippet */
+      .category-title {
+        font-size: 24px;
+        color: #0077c8;
+        margin-top: 20px;
+        border-bottom: 2px solid #0077c8;
+        padding-bottom: 5px;
+        text-align: center;
+      }
+      .product-grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: center;
+      }
+      .product-card {
+        background: white;
+        padding: 15px;
+        border-radius: 10px;
+        box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+        text-align: center;
+        width: 250px;
+      }
+      .product-card img {
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+      }
+      .product-title {
+        font-size: 18px;
+        color: #333;
+        margin: 10px 0;
+      }
+      .product-price {
+        font-size: 16px;
+        color: #0077c8;
+        font-weight: bold;
+      }
+      .quote-btn {
+        background: #65C51B;
+        color: white;
+        padding: 10px 20px;
+        font-size: 16px;
+        border: none;
+        cursor: pointer;
+        border-radius: 5px;
+        margin-top: 10px;
+      }
+      .quote-btn:hover {
+        background: #FFA733;
+      }
+      .filter-btn {
+        background: #0077c8;
+        color: white;
+        padding: 10px 20px;
+        font-size: 16px;
+        border: none;
+        cursor: pointer;
+        border-radius: 5px;
+        margin: 10px;
+      }
+      .filter-container {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ---------- Fixed Header ---------- -->
+    <header>
+      <div class="logo">CLM Misting Solutions</div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="products.html" class="active">Products</a></li>
+          <li><a href="#installation">Installation &amp; Setup</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#contact">Contact Us</a></li>
+        </ul>
+      </nav>
+    </header>
+    
+    <!-- ---------- Main Content Container (Frame) ---------- -->
+    <div id="page-wrapper">
+      <!-- ---------- Products Section ---------- -->
+      <section id="products" class="section">
+        <div class="filter-container">
+          <button class="filter-btn" onclick="filterCategory('all')">All Parts</button>
+          <button class="filter-btn" onclick="filterCategory('main-equipment')">Main Equipment</button>
+          <button class="filter-btn" onclick="filterCategory('installation-parts')">Installation Parts</button>
+          <button class="filter-btn" onclick="filterCategory('nozzles-and-fittings')">Nozzles &amp; Fittings</button>
+          <button class="filter-btn" onclick="filterCategory('tubing-and-connectors')">Tubing &amp; Connectors</button>
+          <button class="filter-btn" onclick="filterCategory('accessories-and-replacement-parts')">Accessories &amp; Replacement Parts</button>
+        </div>
+        
+        <div class="product-section" data-category="main-equipment">
+          <h2 class="category-title">Main Equipment</h2>
+          <div class="product-grid">
+            <div class="product-card">
+              <img src="https://github.com/erikasbusinessolutions/clm-image-hosting/blob/main/55gal%20Drum.jpg?raw=true" alt="55 Gallon Drum - Black, Removable Lid, Lock Ring">
+              <div class="product-title">55 Gallon Drum - Black, Removable Lid, Lock Ring</div>
+              <div class="product-price">$145.20</div>
+              <button class="quote-btn">Add to Quote</button>
+            </div>
+          </div>
+        </div>
+        
+        <div class="product-section" data-category="installation-parts">
+          <h2 class="category-title">Installation Parts</h2>
+          <div class="product-grid">
+            <div class="product-card">
+              <img src="" alt="24 Riser Box - Alu Riser, 1/4 SL Connector, 1/4 PA12 BLK, 1/4 SL Tee, 45 Deg Adapt, SL Nozzle">
+              <div class="product-title">24" Riser Box - Alu Riser, 1/4 SL Connector, 1/4 PA12 BLK, 1/4 SL Tee, 45 Deg Adapt, SL Nozzle</div>
+              <div class="product-price">$251.30</div>
+              <button class="quote-btn">Add to Quote</button>
+            </div>
+            <div class="product-card">
+              <img src="https://github.com/erikasbusinessolutions/clm-image-hosting/blob/main/Install%20Parts%20Kit.jpg?raw=true" alt="INSTALL PARTS KIT / Black">
+              <div class="product-title">INSTALL PARTS KIT / Black</div>
+              <div class="product-price">$900.57</div>
+              <button class="quote-btn">Add to Quote</button>
+            </div>
+            <div class="product-card">
+              <img src="" alt="Misting System Tank Mount Kit">
+              <div class="product-title">Misting System Tank Mount Kit</div>
+              <div class="product-price">$34.37</div>
+              <button class="quote-btn">Add to Quote</button>
+            </div>
+            <div class="product-card">
+              <img src="https://github.com/erikasbusinessolutions/clm-image-hosting/blob/main/NOZZLE%20WRENCH%20SET.jpg?raw=true" alt="Nozzle Wrench Set - Orange &amp; Blue">
+              <div class="product-title">Nozzle Wrench Set - Orange &amp; Blue</div>
+              <div class="product-price">$16.50</div>
+              <button class="quote-btn">Add to Quote</button>
+            </div>
+            <div class="product-card">
+              <img src="" alt="Tubing Cutter">
+              <div class="product-title">Tubing Cutter</div>
+              <div class="product-price">$9.08</div>
+              <button class="quote-btn">Add to Quote</button>
+            </div>
+          </div>
+        </div>
+        
+        <div class="product-section" data-category="nozzles-and-fittings">
+          <h2 class="category-title">Nozzles &amp; Fittings</h2>
+          <div class="product-grid">
+            <div class="product-card">
+              <img src="https://github.com/erikasbusinessolutions/clm-image-hosting/blob/main/45ADP.jpg?raw=true" alt="1/4 Slip Lock 45 Deg Adapter, Slim Line, Nickel-plated Brass">
+              <div class="product-title">1/4" Slip Lock 45 Deg Adapter, Slim Line, Nickel-plated Brass</div>
+              <div class="product-price">$30.43</div>
+              <button class="quote-btn">Add to Quote</button>
+            </div>
+            <div class="product-card">
+              <img src="https://github.com/erikasbusinessolutions/clm-image-hosting/blob/main/Ball%20and%20Spring.jpg?raw=true" alt="Spring &amp; Ball, Slim Line, Viton">
+              <div class="product-title">Spring &amp; Ball, Slim Line, Viton</div>
+              <div class="product-price">$19.25</div>
+              <button class="quote-btn">Add to Quote</button>
+            </div>
+            <div class="product-card">
+              <img src="https://github.com/erikasbusinessolutions/clm-image-hosting/blob/main/ELBOW.jpg?raw=true" alt="1/4 Slip Lock Elbow, Nickel-plated Brass">
+              <div class="product-title">1/4" Slip Lock Elbow, Nickel-plated Brass</div>
+              <div class="product-price">$41.60</div>
+              <button class="quote-btn">Add to Quote</button>
+            </div>
+            <div class="product-card">
+              <img src="" alt="Hex Nozzle Assembly">
+              <div class="product-title">Hex Nozzle Assembly</div>
+              <div class="product-price">$160.90</div>
+              <button class="quote-btn">Add to Quote</button>
+            </div>
+            <div class="product-card">
+              <img src="https://github.com/erikasbusinessolutions/clm-image-hosting/blob/main/O-RING.jpg?raw=true" alt="Hex Nozzle O-Ring">
+              <div class="product-title">Hex Nozzle O-Ring</div>
+              <div class="product-price">$4.25</div>
+              <button class="quote-btn">Add to Quote</button>
+            </div>
+            <div class="product-card">
+              <img src="https://github.com/erikasbusinessolutions/clm-image-hosting/blob/main/HEX%20NOZZLE%20STRAIGHT%20ADP.jpg?raw=true" alt="Hex Nozzle 1/4 Slip Lock Straight Adapter, Nickel-plated Brass">
+              <div class="product-title">Hex Nozzle 1/4" Slip Lock Straight Adapter, Nickel-plated Brass</div>
+              <div class="product-price">$45.40</div>
+              <button class="quote-btn">Add to Quote</button>
+            </div>
+            <div class="product-card">
+              <img src="https://github.com/erikasbusinessolutions/clm-image-hosting/blob/main/HEX%20NOZZLE.jpg?raw=true" alt="Hex Nozzle, 304SS, Brass Filter, Anti-Drip">
+              <div class="product-title">Hex Nozzle, 304SS, Brass Filter, Anti-Drip</div>
+              <div class="product-price">$90.80</div>
+              <button class="quote-btn">Add to Quote</button>
+            </div>
+            <div class="product-card">
+              <img src="https://github.com/erikasbusinessolutions/clm-image-hosting/blob/main/Slim%20Nozzles.jpg?raw=true" alt="Slim Line Nozzle, Filter-less, Anti-drip, 0.3mm Orifice, 316SS/NPB">
+              <div class="product-title">Slim Line Nozzle, Filter-less, Anti-drip, 0.3mm Orifice, 316SS/NPB</div>
+              <div class="product-price">$75.10</div>
+              <button class="quote-btn">Add to Quote</button>
+            </div>
+            <div class="product-card">
+              <img src="https://github.com/erikasbusinessolutions/clm-image-hosting/blob/main/Slim%20Nozzle%20Assemblies.jpg?raw=true" alt="Slim Line Nozzle Assembly, 0.3mm Orifice">
+              <div class="product-title">Slim Line Nozzle Assembly, 0.3mm Orifice</div>
+              <div class="product-price">$157.40</div>
+              <button class="quote-btn">Add to Quote</button>
+            </div>
+            <div class="product-card">
+              <img src="" alt="1/4 Slip Lock Plug, Nickel-plated Brass">
+              <div class="product-title">1/4" Slip Lock Plug, Nickel-plated Brass</div>
+              <div class="product-price">$41.60</div>
+              <button class="quote-btn">Add to Quote</button>
+            </div>
+            <div class="product-card">
+              <img src="" alt="1/4 Slip Lock Straight, Nickel-plated Brass">
+              <div class="product-title">1/4" Slip Lock Straight, Nickel-plated Brass</div>
+              <div class="product-price">$41.60</div>
+              <button class="quote-btn">Add to Quote</button>
+            </div>
+            <div class="product-card">
+              <img src="" alt="1/4 Slip Lock Tee, Nickel-plated Brass">
+              <div class="product-title">1/4" Slip Lock Tee, Nickel-plated Brass</div>
+              <div class="product-price">$41.60</div>
+              <button class="quote-btn">Add to Quote</button>
+            </div>
+          </div>
+        </div>
+        
+        <div class="product-section" data-category="tubing-and-connectors">
+          <h2 class="category-title">Tubing &amp; Connectors</h2>
+          <div class="product-grid">
+            <div class="product-card">
+              <img src="https://github.com/erikasbusinessolutions/clm-image-hosting/blob/main/Black%20Tubing.jpg?raw=true" alt="1/4 Nylon Tubing, PA 12, Black, 500ft">
+              <div class="product-title">1/4" Nylon Tubing, PA 12, Black, 500ft</div>
+              <div class="product-price">$136.13</div>
+              <button class="quote-btn">Add to Quote</button>
+            </div>
+            <div class="product-card">
+              <img src="" alt="Tubing Clamps, 1/4, 100/PK, Black">
+              <div class="product-title">Tubing Clamps, 1/4", 100/PK, Black</div>
+              <div class="product-price">$13.00</div>
+              <button class="quote-btn">Add to Quote</button>
+            </div>
+            <div class="product-card">
+              <img src="https://github.com/erikasbusinessolutions/clm-image-hosting/blob/main/Brown%20Tubing.jpg?raw=true" alt="1/4 Nylon Tubing, PA 12, Brown, 500ft">
+              <div class="product-title">1/4" Nylon Tubing, PA 12, Brown, 500ft</div>
+              <div class="product-price">$136.13</div>
+              <button class="quote-btn">Add to Quote</button>
+            </div>
+            <div class="product-card">
+              <img src="https://github.com/erikasbusinessolutions/clm-image-hosting/blob/main/Gray%20Tubing.jpg?raw=true" alt="1/4 Nylon Tubing, PA 12, Gray, 500ft">
+              <div class="product-title">1/4" Nylon Tubing, PA 12, Gray, 500ft</div>
+              <div class="product-price">$136.13</div>
+              <button class="quote-btn">Add to Quote</button>
+            </div>
+            <div class="product-card">
+              <img src="https://github.com/erikasbusinessolutions/clm-image-hosting/blob/main/Gray%20Clips.jpg?raw=true" alt="Tubing Clamps, 1/4, 100/PK, Gray">
+              <div class="product-title">Tubing Clamps, 1/4", 100/PK, Gray</div>
+              <div class="product-price">$13.00</div>
+              <button class="quote-btn">Add to Quote</button>
+            </div>
+            <div class="product-card">
+              <img src="" alt="1/4 Nylon Tubing, PA 12, Tan, 500ft">
+              <div class="product-title">1/4" Nylon Tubing, PA 12, Tan, 500ft</div>
+              <div class="product-price">$136.13</div>
+              <button class="quote-btn">Add to Quote</button>
+            </div>
+            <div class="product-card">
+              <img src="" alt="1/4 Nylon Tubing, PA 12, Translucent White, 500ft">
+              <div class="product-title">1/4" Nylon Tubing, PA 12, Translucent White, 500ft</div>
+              <div class="product-price">$136.13</div>
+              <button class="quote-btn">Add to Quote</button>
+            </div>
+            <div class="product-card">
+              <img src="" alt="Tubing Clamps, 1/4, 100/PK, White">
+              <div class="product-title">Tubing Clamps, 1/4", 100/PK, White</div>
+              <div class="product-price">$13.00</div>
+              <button class="quote-btn">Add to Quote</button>
+            </div>
+          </div>
+        </div>
+        
+        <div class="product-section" data-category="accessories-and-replacement-parts">
+          <h2 class="category-title">Accessories &amp; Replacement Parts</h2>
+          <div class="product-grid">
+            <div class="product-card">
+              <img src="https://github.com/erikasbusinessolutions/clm-image-hosting/blob/main/PressureGauge.jpg?raw=true" alt="Pressure Gauge, 0-300 PSI, 1-1/2 Dial, 1/8 NPT - LIQUID FILLED CENTER BACK MOUNT">
+              <div class="product-title">Pressure Gauge, 0-300 PSI, 1-1/2" Dial, 1/8" NPT - LIQUID FILLED CENTER BACK MOUNT</div>
+              <div class="product-price">$25.87</div>
+              <button class="quote-btn">Add to Quote</button>
+            </div>
+            <div class="product-card">
+              <img src="https://github.com/erikasbusinessolutions/clm-image-hosting/blob/main/Motor.jpg?raw=true" alt="1/2 HP Electric Motor, 110V, US Motors">
+              <div class="product-title">1/2 HP Electric Motor, 110V, US Motors</div>
+              <div class="product-price">$239.99</div>
+              <button class="quote-btn">Add to Quote</button>
+            </div>
+            <div class="product-card">
+              <img src="https://github.com/erikasbusinessolutions/clm-image-hosting/blob/main/15footCord.jpg?raw=true" alt="Power Cord - 120V 16/3 SJTW / Power Cord / 15ft / 5-15 / Open w/ 3Connectors">
+              <div class="product-title">Power Cord - 120V 16/3 SJTW / Power Cord / 15ft / 5-15 / Open w/ 3Connectors</div>
+              <div class="product-price">$14.17</div>
+              <button class="quote-btn">Add to Quote</button>
+            </div>
+            <div class="product-card">
+              <img src="https://github.com/erikasbusinessolutions/clm-image-hosting/blob/main/8ft%20cord.jpg?raw=true" alt="Power Cord - 120V 16/3 SJTW / Power Cord / 8ft / 5-15 / Open w/ 3Connectors">
+              <div class="product-title">Power Cord - 120V 16/3 SJTW / Power Cord / 8ft / 5-15 / Open w/ 3Connectors</div>
+              <div class="product-price">$9.57</div>
+              <button class="quote-btn">Add to Quote</button>
+            </div>
+            <div class="product-card">
+              <img src="https://github.com/erikasbusinessolutions/clm-image-hosting/blob/main/Pump.jpg?raw=true" alt="Pump 140 GPH 250PSI - ROTARY VANE PUMP SERIES 2">
+              <div class="product-title">Pump 140 GPH 250PSI - ROTARY VANE PUMP SERIES 2</div>
+              <div class="product-price">$148.50</div>
+              <button class="quote-btn">Add to Quote</button>
+            </div>
+            <div class="product-card">
+              <img src="https://github.com/erikasbusinessolutions/clm-image-hosting/blob/main/Remote&Reciever.jpg?raw=true" alt="Remote Control Receiver Switch - WIFI - 433mhz - 120v - Includes 2 On-OFF Remotes">
+              <div class="product-title">Remote Control Receiver Switch - WIFI - 433mhz - 120v - Includes 2 On-OFF Remotes</div>
+              <div class="product-price">$24.51</div>
+              <button class="quote-btn">Add to Quote</button>
+            </div>
+            <div class="product-card">
+              <img src="https://github.com/erikasbusinessolutions/clm-image-hosting/blob/main/ExtraRemote.jpg?raw=true" alt="Remote Control 433mhz ON-OFF">
+              <div class="product-title">Remote Control 433mhz ON-OFF</div>
+              <div class="product-price">$9.27</div>
+              <button class="quote-btn">Add to Quote</button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    
+    <!-- JavaScript for Product Filtering -->
+    <script>
+      function filterCategory(category) {
+        const sections = document.querySelectorAll('.product-section');
+        sections.forEach(section => {
+          section.style.display = (category === 'all' || section.dataset.category === category) ? 'block' : 'none';
+        });
+      }
+    </script>
+    
+    <!-- JavaScript for Header Scroll Effect -->
+    <script>
+      window.addEventListener('scroll', function(){
+        var header = document.querySelector('header');
+        if(window.scrollY > 50){
+          header.classList.add('scrolled');
+        } else {
+          header.classList.remove('scrolled');
+        }
+      });
+    </script>
+  </body>
+</html>

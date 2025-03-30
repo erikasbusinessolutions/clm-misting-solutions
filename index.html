@@ -15,7 +15,6 @@
         overflow-x: hidden;
         background-color: #0077c8; /* Frame color */
       }
-      /* Default Fonts */
       h1, h2, h3, .heading {
         font-family: 'Montserrat', sans-serif;
       }
@@ -31,9 +30,9 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        background-color: rgba(242, 242, 242, 0.9); /* Light background */
+        background-color: rgba(242,242,242,0.9);
         padding: 10px 20px;
-        position: fixed; /* Fixed header */
+        position: fixed;
         top: 0;
         left: 0;
         right: 0;
@@ -57,13 +56,11 @@
         color: #0077c8;
         font-weight: 600;
       }
-      /* Active link styling */
       nav ul li a.active {
         text-decoration: underline;
         text-decoration-thickness: 3px;
         text-decoration-color: #0077c8;
       }
-      /* When header is scrolled, change background and text */
       header.scrolled {
         background-color: #0077c8;
       }
@@ -75,8 +72,8 @@
       /* ---------- Main Content Container (Frame) ---------- */
       #page-wrapper {
         background-color: #f2f2f2;
-        margin: 80px auto 20px; /* Top margin to account for fixed header */
-        max-width: 1200px; /* Adjust to match Google Sites "wide" */
+        margin: 80px auto 20px;
+        max-width: 1200px;
         padding: 20px;
         box-sizing: border-box;
       }
@@ -92,33 +89,27 @@
       
       /* ---------- Hero Section ---------- */
       .hero-section {
-        position: relative;
-        background: linear-gradient(to bottom, rgba(0,119,200,0.9), rgba(0,174,239,0.9));
-        color: white;
-        text-align: center;
         display: flex;
-        flex-wrap: wrap;
+        flex-direction: row;
+        flex-wrap: nowrap;
         align-items: center;
-        justify-content: center;
+        justify-content: space-between;
         gap: 20px;
         width: 100%;
-        overflow: hidden;
         padding: 20px;
+        background: linear-gradient(to bottom, rgba(0,119,200,0.9), rgba(0,174,239,0.9));
+        color: white;
         box-sizing: border-box;
-      }
-      @media (min-width: 769px) {
-        .hero-section {
-          min-height: 100vh;
-        }
+        overflow: hidden;
       }
       @media (max-width: 768px) {
         .hero-section {
-          height: auto;
-          padding: 0;
+          flex-direction: column;
           gap: 10px;
+          padding: 10px;
         }
       }
-      /* Ensure each hero column takes 50% of the space */
+      /* Left Column: Contains the logo, text and button */
       .hero-column {
         flex: 1 1 50%;
         max-width: 50%;
@@ -132,15 +123,10 @@
         }
       }
       .hero-logo {
-        width: 450px;
-        max-width: 90%;
+        width: 100%;
+        max-width: 450px;
         height: auto;
         margin-bottom: 5px;
-      }
-      @media (max-width: 768px) {
-        .hero-logo {
-          width: 80%;
-        }
       }
       .hero-text {
         font-size: 24px;
@@ -149,13 +135,6 @@
         font-weight: bold;
         line-height: 1.8;
         text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
-      }
-      @media (max-width: 768px) {
-        .hero-text {
-          font-size: 16px;
-          margin: 0 auto;
-          max-width: 85%;
-        }
       }
       .hero-button {
         display: inline-block;
@@ -170,9 +149,6 @@
         border-radius: 8px;
         transition: background 0.3s ease, box-shadow 0.3s ease;
         text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
-        box-shadow: inset 0px -2px 4px rgba(0,0,0,0.2),
-                    inset 0px 2px 4px rgba(255,255,255,0.15);
-        text-decoration: none;
       }
       .hero-button:hover {
         background-color: #FFA733;
@@ -183,7 +159,7 @@
           font-size: 16px;
         }
       }
-      /* Updated hero-gif: set width to 100% with a max-width */
+      /* Right Column: Contains the GIF */
       .hero-gif {
         display: block;
         width: 100%;
@@ -295,7 +271,6 @@
       .footer-links a {
         color: #5C6C75;
         font-size: 1em;
-        text-decoration: none;
       }
       .footer-contact {
         display: flex;
@@ -311,7 +286,6 @@
         display: flex;
         align-items: center;
         gap: 5px;
-        text-decoration: none;
       }
       .footer-social {
         display: flex;
@@ -332,7 +306,7 @@
     </style>
   </head>
   <body>
-    <!-- ---------- Fixed Header ---------- -->
+    <!-- Fixed Header -->
     <header>
       <div class="logo">CLM Misting Solutions</div>
       <nav>
@@ -347,12 +321,12 @@
       </nav>
     </header>
     
-    <!-- ---------- Main Content Container (Frame) ---------- -->
+    <!-- Main Content Container (Frame) -->
     <div id="page-wrapper">
-      <!-- ---------- Hero Section ---------- -->
+      <!-- Hero Section -->
       <section id="hero">
         <div class="hero-section">
-          <!-- Left Column (Logo, Text, Button) -->
+          <!-- Left Column: Contains the static image (logo), text, and button -->
           <div class="hero-column">
             <img src="https://github.com/erikasbusinessolutions/clm-image-hosting/blob/main/Hero.png?raw=true" 
                  alt="CLM Logo" 
@@ -360,7 +334,7 @@
             <p class="hero-text">Premium Mosquito Control for Outdoor Comfort</p>
             <a href="https://sites.google.com/view/clmmistingsolutions-testmode/contact-us?" target="_blank" class="hero-button">Contact Us</a>
           </div>
-          <!-- Right Column (GIF) -->
+          <!-- Right Column: Contains the GIF -->
           <div class="hero-column">
             <img src="https://github.com/erikasbusinessolutions/clm-image-hosting/blob/main/Hero.gif?raw=true" 
                  alt="Mosquito Control GIF" 
@@ -371,7 +345,7 @@
       
       <hr class="divider">
       
-      <!-- ---------- Section 2: Why Choose CLM Misting Solutions? ---------- -->
+      <!-- Section 2: Why Choose CLM Misting Solutions? -->
       <section id="why-choose" class="section">
         <h2 class="subheading">Why Choose CLM Misting Solutions?</h2>
         <p class="description">
@@ -381,7 +355,7 @@
       
       <hr class="divider">
       
-      <!-- ---------- Section 3: 3 Boxes ---------- -->
+      <!-- Section 3: 3 Boxes -->
       <section id="features" class="section">
         <div class="boxes-container">
           <!-- Box 1 -->
@@ -413,7 +387,7 @@
       
       <hr class="divider">
       
-      <!-- ---------- Section 4: Built for Performance, Designed for Convenience ---------- -->
+      <!-- Section 4: Built for Performance, Designed for Convenience -->
       <section id="performance" class="section">
         <div class="two-column">
           <!-- Text Column (Left) -->
@@ -432,7 +406,7 @@
       
       <hr class="divider">
       
-      <!-- ---------- Section 5: Customizable Protection for Every Space ---------- -->
+      <!-- Section 5: Customizable Protection for Every Space -->
       <section id="customizable" class="section">
         <h2 class="subheading">Customizable Protection for Every Space</h2>
         <p class="description">
@@ -442,7 +416,7 @@
       
       <hr class="divider">
       
-      <!-- ---------- Section 6: Fast, Simple Installation ---------- -->
+      <!-- Section 6: Fast, Simple Installation -->
       <section id="installation" class="section">
         <div class="two-column">
           <!-- Text Column (Left) -->
@@ -461,10 +435,9 @@
       
       <hr class="divider">
       
-      <!-- ---------- Footer ---------- -->
+      <!-- Footer -->
       <footer>
         <div class="footer-divider"></div>
-        <!-- 4 Horizontal Links -->
         <div class="footer-links">
           <a href="#">Terms of Use</a>
           <a href="#">Privacy Policy</a>
@@ -472,7 +445,6 @@
           <a href="#">Contact Us</a>
         </div>
         <div class="footer-divider"></div>
-        <!-- 3 Horizontal Contact Blocks -->
         <div class="footer-contact">
           <div>
             <a href="tel:9035786478">
@@ -508,7 +480,7 @@
       </footer>
     </div>
     
-    <!-- ---------- JavaScript for Header Scroll Effect ---------- -->
+    <!-- JavaScript for Header Scroll Effect -->
     <script>
       window.addEventListener('scroll', function(){
         var header = document.querySelector('header');

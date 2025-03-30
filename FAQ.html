@@ -1,1 +1,199 @@
-
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>FAQ - CLM Misting Solutions</title>
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <!-- Load Google Fonts: Montserrat for headings, Open Sans for body text -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+      /* ---------- Global Styles ---------- */
+      body, html {
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
+        background-color: #0077c8; /* Frame color */
+      }
+      h1, h2, h3, .heading {
+        font-family: 'Montserrat', sans-serif;
+      }
+      p, .normal-text {
+        font-family: 'Open Sans', sans-serif;
+      }
+      a {
+        text-decoration: none;
+      }
+      
+      /* ---------- Header ---------- */
+      header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background-color: rgba(242,242,242,0.9);
+        padding: 10px 20px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+        transition: background-color 0.3s ease;
+      }
+      header .logo {
+        font-size: 28px;
+        font-weight: bold;
+        color: #0077c8;
+      }
+      nav ul {
+        display: flex;
+        gap: 15px;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+      nav ul li a {
+        font-size: 20px;
+        color: #0077c8;
+        font-weight: 600;
+      }
+      nav ul li a.active {
+        text-decoration: underline;
+        text-decoration-thickness: 3px;
+        text-decoration-color: #0077c8;
+      }
+      header.scrolled {
+        background-color: #0077c8;
+      }
+      header.scrolled .logo,
+      header.scrolled nav ul li a {
+        color: #fff;
+      }
+      
+      /* ---------- Main Content Container (Frame) ---------- */
+      #page-wrapper {
+        background-color: #f2f2f2;
+        margin: 80px auto 20px; /* Top margin to offset fixed header */
+        max-width: 1200px; /* Google Sites "wide" layout */
+        padding: 20px;
+        box-sizing: border-box;
+      }
+      
+      /* ---------- FAQ Page Specific Styles ---------- */
+      .faq-container {
+        max-width: 800px;
+        margin: auto;
+        padding: 20px;
+      }
+      .faq-button {
+        width: 100%;
+        padding: 15px;
+        font-size: 20px;
+        font-weight: bold;
+        background: #0077c8;
+        color: white;
+        border: none;
+        cursor: pointer;
+        border-radius: 8px;
+        text-align: left;
+        margin-top: 10px;
+        transition: background 0.3s ease;
+        font-family: 'Montserrat', sans-serif;
+      }
+      .faq-button:hover {
+        background: #005b9f;
+      }
+      .faq-content {
+        display: none;
+        padding: 20px;
+        background: #F8F8F8;
+        border-radius: 8px;
+        margin-top: 5px;
+        font-family: 'Open Sans', sans-serif;
+      }
+      .faq-content ul {
+        font-size: 18px;
+        color: #444;
+        margin: 0;
+        padding-left: 20px;
+        list-style-type: disc;
+      }
+      .faq-content p {
+        font-size: 16px;
+        text-align: center;
+        color: #444;
+        margin-top: 10px;
+      }
+      .faq-content a {
+        color: #0077c8;
+      }
+      .faq-content a:hover {
+        text-decoration: underline;
+      }
+      @media (max-width: 768px) {
+        .faq-button {
+          font-size: 16px;
+          padding: 10px;
+        }
+        .faq-content ul {
+          font-size: 14px;
+        }
+        .faq-content p {
+          font-size: 12px;
+        }
+      }
+    </style>
+    <script>
+      function toggleDropdown(id) {
+        var element = document.getElementById(id);
+        element.style.display = (element.style.display === "none" || element.style.display === "") ? "block" : "none";
+      }
+    </script>
+  </head>
+  <body>
+    <!-- ---------- Fixed Header ---------- -->
+    <header>
+      <div class="logo">CLM Misting Solutions</div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="installation.html">Installation &amp; Setup</a></li>
+          <li><a href="faq.html" class="active">FAQ</a></li>
+          <li><a href="#contact">Contact Us</a></li>
+        </ul>
+      </nav>
+    </header>
+    
+    <!-- ---------- Main Content Container (Frame) ---------- -->
+    <div id="page-wrapper">
+      <div class="faq-container">
+        <button class="faq-button" onclick="toggleDropdown('faq')">
+          ▶ Frequently Asked Questions (FAQ)
+        </button>
+        <div id="faq" class="faq-content">
+          <ul>
+            <li><strong>How long does the misting system last per refill?</strong> This depends on the number of nozzles installed, number of timed treatments per day and remote control usage.</li>
+            <li><strong>Can I adjust the misting schedule?</strong> Yes! The schedule can be customized to fit you and your family's outdoor schedule.</li>
+            <li><strong>Are CLM misting systems effective?</strong> Yes, misting systems can be a very effective means for controlling mosquitoes if installed correctly and nozzles are placed efficiently around the area to be treated.</li>
+            <li><strong>Do CLM misting systems work on flies?</strong> Yes, our misting systems are very effective at controlling flies if properly installed.</li>
+            <li><strong>Are CLM misting systems safe for pets?</strong> Please read all labels and only use products labeled for use in misting systems. There are many options when selecting the right solution, and several botanical products available that are effective in misting systems.</li>
+          </ul>
+          <p>Still have questions? <a href="contact.html">Contact us here</a>.</p>
+        </div>
+      </div>
+    </div>
+    
+    <!-- JavaScript for Header Scroll Effect -->
+    <script>
+      window.addEventListener('scroll', function(){
+        var header = document.querySelector('header');
+        if(window.scrollY > 50){
+          header.classList.add('scrolled');
+        } else {
+          header.classList.remove('scrolled');
+        }
+      });
+    </script>
+  </body>
+</html>

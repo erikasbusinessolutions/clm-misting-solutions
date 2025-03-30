@@ -276,7 +276,7 @@ hr.divider {
   flex-wrap: wrap; /* Keep them in one row */
   overflow-x: auto;  /* Allow horizontal scrolling if needed */
   gap: 10px;
-  margin: 20px 0;
+  margin: 10px 0;
   justify-content: center;
 }
 .three-column .target-item {

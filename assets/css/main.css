@@ -287,7 +287,7 @@ hr.divider {
 }
 .three-column .target-item img {
   width: 100%;
-  max-width: 800px;      /* All images will be up to 400px wide */
+  max-width: 1000px;      /* All images will be up to 400px wide */
   height: auto;
   margin-bottom: 10px;
 }

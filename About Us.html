@@ -1,1 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>CLM Misting Solutions - About Us</title>
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <!-- Load Google Fonts: Montserrat for headings, Open Sans for body text -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+      /* ---------- Page-Specific Overrides for About Us ---------- */
+      .overview-section {
+        background: #F8F8F8;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        margin-bottom: 20px;
+      }
+      .overview-section h3 {
+        color: #0077c8;
+        font-size: 26px;
+        margin-bottom: 10px;
+        border-bottom: 2px solid #0077c8;
+        padding-bottom: 5px;
+        text-align: center;
+        font-family: 'Montserrat', sans-serif;
+      }
+      .overview-section p {
+        font-size: 18px;
+        color: #444;
+        margin: 0;
+        font-family: 'Open Sans', sans-serif;
+        text-align: center;
+      }
+      .video-section {
+        margin-bottom: 20px;
+      }
+      .video-wrapper {
+        position: relative;
+        width: 100%;
+        max-width: 854px;
+        margin: auto;
+        padding-bottom: 56.25%; /* 16:9 aspect ratio */
+        height: 0;
+        overflow: hidden;
+      }
+      .video-wrapper iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: 0;
+      }
+      .dropdown-button {
+        width: 100%;
+        padding: 15px;
+        font-size: 20px;
+        font-weight: bold;
+        background: #0077c8;
+        color: white;
+        border: none;
+        cursor: pointer;
+        border-radius: 8px;
+        text-align: left;
+        margin-top: 10px;
+        font-family: 'Montserrat', sans-serif;
+      }
+      .dropdown-button:first-of-type {
+        margin-top: 0;
+      }
+      .dropdown-content {
+        display: none;
+        padding: 20px;
+        background: #F8F8F8;
+        border-radius: 8px;
+        margin-top: 5px;
+        font-family: 'Open Sans', sans-serif;
+      }
+      .dropdown-content ul {
+        font-size: 18px;
+        color: #444;
+        margin: 0;
+        padding-left: 20px;
+        list-style-type: disc;
+      }
+      @media (max-width: 768px) {
+        .overview-section {
+          padding: 13px;
+        }
+        .overview-section h3 {
+          font-size: 20px;
+        }
+        .overview-section p,
+        .dropdown-content ul {
+          font-size: 12px;
+        }
+        .dropdown-button {
+          padding: 12px;
+          font-size: 12px;
+        }
+        .video-section {
+          margin-bottom: 5px;
+        }
+      }
+    </style>
+    <script>
+      function toggleDropdown(id) {
+        var element = document.getElementById(id);
+        if (element.style.display === "none" || element.style.display === "") {
+          element.style.display = "block";
+        } else {
+          element.style.display = "none";
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <!-- Fixed Header (Same as Other Pages) -->
+    <header>
+      <div class="logo">CLM Misting Solutions</div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html" class="active">About Us</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="#installation">Installation &amp; Setup</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#contact">Contact Us</a></li>
+        </ul>
+      </nav>
+    </header>
+    
+    <!-- Main Content Container (Frame) -->
+    <div id="page-wrapper">
+      <!-- 1. Overview Section -->
+      <div class="overview-section">
+        <h3>Who is CLM Misting Solutions?</h3>
+        <p>
+          CLM Misting Solutions specializes in advanced mosquito and fly control systems designed for residential, commercial, and equestrian spaces. Our misting technology provides an environmentally friendly, reliable, and effective solution to eliminate pests. Whether for a backyard, barn, or restaurant patio, our customized solutions offer long-term protection.
+        </p>
+      </div>
 
+      <!-- 2. Video Section -->
+      <div class="video-section">
+        <div class="video-wrapper">
+          <iframe 
+            src="https://player.vimeo.com/video/1068686619?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" 
+            allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" 
+            title="CLM Misting Solutions">
+          </iframe>
+        </div>
+      </div>
+
+      <!-- 3. Interactive Dropdowns -->
+      <div class="overview-section">
+        <button class="dropdown-button" onclick="toggleDropdown('howItWorks')">
+          ▶ How CLM Misting Systems Work
+        </button>
+        <div id="howItWorks" class="dropdown-content">
+          <ul>
+            <li>Timed misting cycles are pre-set to spray 2-3 times per day (adjustable).</li>
+            <li>Nozzles release an ultra-fine spray to eliminate mosquitoes and flies on contact.</li>
+            <li>Nozzles are strategically placed along fences, patios, barns, or other structures for targeted coverage.</li>
+            <li>Smart control options include manual remote activation for extra sprays as needed.</li>
+            <li>Creates a residual protective barrier to keep outdoor spaces mosquito and fly free.</li>
+          </ul>
+        </div>
+
+        <button class="dropdown-button" onclick="toggleDropdown('whyCLM')">
+          ▶ Why CLM Misting Solutions Are More Effective
+        </button>
+        <div id="whyCLM" class="dropdown-content">
+          <ul>
+            <li>Timed treatments are more effective than once every three weeks or monthly treatments.</li>
+            <li>Hands-free protection - no need for hand sprayers or blowers.</li>
+            <li>Customizable for barns, residential backyards, restaurants, and event spaces.</li>
+            <li>Use only EPA-approved solutions designed for misting applications.</li>
+            <li>All-natural botanical options available.</li>
+            <li>No need to dose yourself with mosquito repellant.</li>
+          </ul>
+        </div>
+
+        <button class="dropdown-button" onclick="toggleDropdown('systemFeatures')">
+          ▶ Key Features of CLM Misting Systems
+        </button>
+        <div id="systemFeatures" class="dropdown-content">
+          <ul>
+            <li>Advanced digital system with ½ horsepower motor, 140 GPH pump, and control manifold which supports up to 90 nozzles at 200 PSI.</li>
+            <li>Weather-resistant design with durable polyurethane outer shell.</li>
+            <li>Tamper-proof lockable enclosure.</li>
+            <li>Customizable scheduling with a digital control panel.</li>
+            <li>Optional smart control for Wi-Fi-enabled misting management.</li>
+          </ul>
+        </div>
+
+        <button class="dropdown-button" onclick="toggleDropdown('safety')">
+          ▶ Responsible Mosquito Control
+        </button>
+        <div id="safety" class="dropdown-content">
+          <ul>
+            <li>Eco-friendly solutions.</li>
+            <li>Environmentally friendly for children and pets when used properly with EPA-approved formulations.</li>
+            <li>Optimized misting schedule providing the right dose at the right time.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- 4. Meet the Owners Section -->
+      <div class="overview-section">
+        <h3>Meet the Owners</h3>
+        <p>Coming Soon!</p>
+      </div>
+    </div>
+    
+    <script>
+      function toggleDropdown(id) {
+        var element = document.getElementById(id);
+        if (element.style.display === "none" || element.style.display === "") {
+          element.style.display = "block";
+        } else {
+          element.style.display = "none";
+        }
+      }
+    </script>
+    
+    <script>
+      window.addEventListener('scroll', function(){
+        var header = document.querySelector('header');
+        if(window.scrollY > 50){
+          header.classList.add('scrolled');
+        } else {
+          header.classList.remove('scrolled');
+        }
+      });
+    </script>
+  </body>
+</html>

@@ -286,13 +286,9 @@ hr.divider {
 }
 .three-column .target-item img {
   width: 100%;
-  max-width: 600px;
+  max-width: none; /* Removed restriction so all images show at natural/larger size */
   height: auto;
   margin-bottom: 10px;
-}
-/* Let the last target image remain larger (remove max-width restriction) */
-.three-column .target-item:last-child img {
-  max-width: none;
 }
 .three-column .target-item h3 {
   font-size: 22px;
@@ -306,7 +302,6 @@ hr.divider {
   margin: 0;
   font-family: 'Open Sans', sans-serif;
 }
-
 /* ---------- Footer ---------- */
 footer {
   background: transparent;

@@ -6,13 +6,14 @@ body, html {
   background-color: #0077c8; /* Frame color */
 }
 
-/* Main content container: wrap all content in a container with this ID */
+/* Main content container: ensure the content shows a light background and a visible border */
 #page-wrapper {
   background-color: #f2f2f2; /* Main content background */
-  margin: 0 auto;   /* Center the container */
+  margin: 0 auto;
   max-width: 1200px; /* Adjust as needed */
-  padding: 20px;
-  box-shadow: 0 0 0 10px #0077c8;  /* Creates a border-like frame */
+  padding: 80px 20px 20px; /* Top padding increased to offset fixed header */
+  border: 10px solid #0077c8; /* Creates a clear blue border (frame) */
+  box-sizing: border-box;
 }
 
 /* ---------- Header ---------- */
@@ -20,10 +21,12 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: #f2f2f2; /* Initially light */
+  background-color: rgba(242, 242, 242, 0.9); /* Light background with slight transparency */
   padding: 10px 20px;
-  position: sticky;
+  position: fixed; /* Fixed header */
   top: 0;
+  left: 0;
+  right: 0;
   z-index: 1000;
   transition: background-color 0.3s ease;
 }
@@ -186,7 +189,7 @@ hr.divider {
 .section {
   padding: 40px 20px;
   text-align: center;
-  /* Transparent background so #f2f2f2 shows through from the container */
+  /* Transparent so the #f2f2f2 shows from the container */
 }
 .section .subheading {
   font-size: 24px;

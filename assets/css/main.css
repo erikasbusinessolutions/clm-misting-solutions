@@ -80,7 +80,7 @@ hr.divider {
   height: 4px;
   background-color: #008fd5;
   border: none;
-  margin: 40px 0;
+  margin: 20px 0;  /* Tighter margins */
 }
 
 /* ---------- Hero Section ---------- */
@@ -105,7 +105,6 @@ hr.divider {
     padding: 10px;
   }
 }
-/* Left Column: Contains the logo, text and button */
 .hero-column {
   flex: 1 1 50%;
   max-width: 50%;
@@ -186,7 +185,7 @@ hr.divider {
 
 /* ---------- Section Base Styles ---------- */
 .section {
-  padding: 40px 20px;
+  padding: 20px 20px; /* Tighter vertical padding */
   text-align: center;
   /* Transparent so the container's background (#f2f2f2) shows */
 }
@@ -274,20 +273,20 @@ hr.divider {
 /* ---------- Three-Column Layout (Target Sectors) ---------- */
 .three-column {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  flex-wrap: nowrap; /* Keep them in one row */
+  overflow-x: auto;  /* Allow horizontal scrolling if needed */
   gap: 20px;
   margin: 20px 0;
+  justify-content: center;
 }
 .three-column .target-item {
-  flex: 1 1 calc(33.333% - 20px);
-  /* Removed max-width so the container does not restrict image size */
+  flex: 0 0 600px; /* Fixed width of 600px for each target item */
   text-align: center;
   box-sizing: border-box;
 }
 .three-column .target-item img {
   width: 100%;
-  max-width: 800px; /* Force all images to display up to 600px wide */
+  /* No max-width restriction so that the image occupies full 600px */
   height: auto;
   margin-bottom: 10px;
 }

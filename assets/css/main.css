@@ -281,7 +281,7 @@ hr.divider {
 }
 .three-column .target-item {
   flex: 0 0 400px;       /* Fixed width of 400px for each target item */
-  max-width: 300px;      /* Restrict container to 400px */
+  max-width: 400px;      /* Restrict container to 400px */
   text-align: center;
   box-sizing: border-box;
 }

@@ -274,20 +274,19 @@ hr.divider {
 .three-column {
   display: flex;
   flex-wrap: wrap; /* Keep them in one row */
-  overflow-x: auto;  /* Allow horizontal scrolling if needed */
   gap: 10px;
   margin: 10px 0;
   justify-content: center;
 }
 .three-column .target-item {
-  flex: 0 0 450px;       /* Fixed width of 400px for each target item */
+  flex: 0 0 50px;       /* Fixed width of 400px for each target item */
   max-width: 400px;      /* Restrict container to 400px */
   text-align: center;
   box-sizing: border-box;
 }
 .three-column .target-item img {
   width: 100%;
-  max-width: 1000px;      /* All images will be up to 400px wide */
+  max-width: 400px;      /* All images will be up to 400px wide */
   height: auto;
   margin-bottom: 10px;
 }

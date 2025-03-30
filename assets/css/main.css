@@ -26,7 +26,7 @@ header {
   align-items: center;
   justify-content: space-between;
   background-color: rgba(242,242,242,0.9); /* Light background (semi-transparent) */
-  padding: 10px 20px;
+  padding: 20px 20px;
   position: fixed;  /* Fixed header */
   top: 0;
   left: 0;
@@ -190,14 +190,14 @@ hr.divider {
   /* Transparent so the container's background (#f2f2f2) shows */
 }
 .section .subheading {
-  font-size: 24px;
+  font-size: 28px;
   color: #0077c8;
   margin-bottom: 10px;
   text-align: center;
   font-family: 'Montserrat', sans-serif;
 }
 .section .description {
-  font-size: 14px;
+  font-size: 18px;
   color: #1c1c1c;
   margin: 0 auto;
   max-width: 800px;

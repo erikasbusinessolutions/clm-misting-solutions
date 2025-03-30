@@ -10,7 +10,7 @@ body, html {
 #page-wrapper {
   background-color: #f2f2f2; /* Content background */
   margin: 0 auto;
-  max-width: 1200px; /* Adjust as needed to match Google Sites wide */
+  max-width: 1000px; /* Adjust as needed to match Google Sites wide */
   padding: 80px 20px 20px; /* Top padding to account for fixed header */
   box-sizing: border-box;
 }

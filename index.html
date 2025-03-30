@@ -75,7 +75,7 @@
         background-color: #f2f2f2;
         margin: 80px auto 20px;
         max-width: 1200px;
-        padding: 80px 20px 20px;
+        padding: 80px 20px 20px; /* Top padding to account for fixed header */
         box-sizing: border-box;
       }
       
@@ -85,7 +85,7 @@
         height: 4px;
         background-color: #008fd5;
         border: none;
-        margin: 40px 0;
+        margin: 20px 0;  /* Reduced margins */
       }
       
       /* ---------- Hero Section ---------- */
@@ -190,18 +190,18 @@
       
       /* ---------- Section Base Styles ---------- */
       .section {
-        padding: 40px 20px;
+        padding: 20px 20px; /* Tighter vertical padding */
         text-align: center;
       }
       .section .subheading {
-        font-size: 26px;
+        font-size: 24px;
         color: #0077c8;
         margin-bottom: 10px;
         text-align: center;
         font-family: 'Montserrat', sans-serif;
       }
       .section .description {
-        font-size: 16px;
+        font-size: 14px;
         color: #1c1c1c;
         margin: 0 auto;
         max-width: 800px;
@@ -277,20 +277,20 @@
       /* ---------- Three-Column Layout (Target Sectors) ---------- */
       .three-column {
         display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
+        flex-wrap: nowrap; /* Keep them in one row */
+        overflow-x: auto; /* Allow horizontal scrolling if necessary */
         gap: 20px;
         margin: 20px 0;
+        justify-content: center;
       }
       .three-column .target-item {
-        flex: 1 1 calc(33.333% - 20px);
-        max-width: calc(33.333% - 20px);
+        flex: 0 0 600px; /* Each target item is fixed at 600px wide */
         text-align: center;
         box-sizing: border-box;
       }
       .three-column .target-item img {
         width: 100%;
-        max-width: 800px;  /* All three images up to 600px wide */
+        /* Remove any max-width restriction so that the image occupies the full 600px if available */
         height: auto;
         margin-bottom: 10px;
       }
@@ -386,13 +386,17 @@
         <div class="hero-section">
           <!-- Left Column: Contains the static image (logo), text, and button -->
           <div class="hero-column">
-            <img src="https://github.com/erikasbusinessolutions/clm-image-hosting/blob/main/Hero.png?raw=true" alt="CLM Logo" class="hero-logo">
+            <img src="https://github.com/erikasbusinessolutions/clm-image-hosting/blob/main/Hero.png?raw=true" 
+                 alt="CLM Logo" 
+                 class="hero-logo">
             <p class="hero-text">Premium Mosquito Control for Outdoor Comfort</p>
             <a href="https://sites.google.com/view/clmmistingsolutions-testmode/contact-us?" target="_blank" class="hero-button">Contact Us</a>
           </div>
           <!-- Right Column: Contains the GIF -->
           <div class="hero-column">
-            <img src="https://github.com/erikasbusinessolutions/clm-image-hosting/blob/main/Hero.gif?raw=true" alt="Mosquito Control GIF" class="hero-gif">
+            <img src="https://github.com/erikasbusinessolutions/clm-image-hosting/blob/main/Hero.gif?raw=true" 
+                 alt="Mosquito Control GIF" 
+                 class="hero-gif">
           </div>
         </div>
       </section>

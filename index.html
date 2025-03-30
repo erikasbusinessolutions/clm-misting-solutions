@@ -416,7 +416,7 @@
 
       <hr class="divider">
 
-<!-- ---------- Target Sectors Section ---------- -->
+<!-- ---------- Target Sectors Section (No Border Boxes) ---------- -->
 <section id="target-sectors" class="section">
   <div class="three-column">
     <div class="target-item">
@@ -438,7 +438,7 @@
 </section>
 
 <style>
-  /* New Three-Column Section Styles */
+  /* Updated Three-Column Section Styles (No Border Boxes) */
   .three-column {
     display: flex;
     flex-wrap: wrap;
@@ -449,17 +449,13 @@
   .three-column .target-item {
     flex: 1 1 calc(33.333% - 20px);
     max-width: calc(33.333% - 20px);
-    background: #F8F8F8;
-    padding: 15px;
-    border-radius: 10px;
-    box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
     text-align: center;
     box-sizing: border-box;
   }
   .three-column .target-item img {
     width: 100%;
+    max-width: 400px; /* Same size as the Installation image */
     height: auto;
-    border-radius: 8px;
     margin-bottom: 10px;
   }
   .three-column .target-item h3 {
@@ -471,8 +467,8 @@
   .three-column .target-item p {
     font-size: 16px;
     color: #444;
-    font-family: 'Open Sans', sans-serif;
     margin: 0;
+    font-family: 'Open Sans', sans-serif;
   }
 </style>
       <hr class="divider">

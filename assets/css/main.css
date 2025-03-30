@@ -105,6 +105,7 @@ hr.divider {
     padding: 10px;
   }
 }
+/* Left Column: Contains the logo, text and button */
 .hero-column {
   flex: 1 1 50%;
   max-width: 50%;
@@ -280,13 +281,13 @@ hr.divider {
 }
 .three-column .target-item {
   flex: 1 1 calc(33.333% - 20px);
-  max-width: calc(33.333% - 20px);
+  /* Removed max-width so the container does not restrict image size */
   text-align: center;
   box-sizing: border-box;
 }
 .three-column .target-item img {
   width: 100%;
-  max-width: none; /* Removed restriction so all images show at natural/larger size */
+  max-width: 600px; /* Force all images to display up to 600px wide */
   height: auto;
   margin-bottom: 10px;
 }
@@ -302,6 +303,7 @@ hr.divider {
   margin: 0;
   font-family: 'Open Sans', sans-serif;
 }
+
 /* ---------- Footer ---------- */
 footer {
   background: transparent;

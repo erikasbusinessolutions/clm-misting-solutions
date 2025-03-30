@@ -3,16 +3,15 @@ body, html {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
-  background-color: #0077c8; /* Frame color */
+  background-color: #0077c8; /* Blue frame background */
 }
 
-/* Main content container: ensure the content shows a light background and a visible border */
+/* Main content container: mimics Google Sites “wide” layout */
 #page-wrapper {
-  background-color: #f2f2f2; /* Main content background */
+  background-color: #f2f2f2; /* Content background */
   margin: 0 auto;
-  max-width: 1200px; /* Adjust as needed */
-  padding: 80px 20px 20px; /* Top padding increased to offset fixed header */
-  border: 10px solid #0077c8; /* Creates a clear blue border (frame) */
+  max-width: 1200px; /* Adjust as needed to match Google Sites wide */
+  padding: 80px 20px 20px; /* Top padding to account for fixed header */
   box-sizing: border-box;
 }
 
@@ -21,7 +20,7 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: rgba(242, 242, 242, 0.9); /* Light background with slight transparency */
+  background-color: rgba(242, 242, 242, 0.9); /* Light background (semi-transparent) */
   padding: 10px 20px;
   position: fixed; /* Fixed header */
   top: 0;
@@ -47,7 +46,7 @@ nav ul {
 }
 
 nav ul li a {
-  font-size: 20px;  /* Slightly larger font size */
+  font-size: 20px;  /* Larger font size */
   color: #0077c8;
   font-weight: 600;
   text-decoration: none;  /* No underline by default */
@@ -61,7 +60,7 @@ nav ul li a.active {
   text-decoration-color: #0077c8;
 }
 
-/* Header scroll effect: when scrolled, header becomes blue and text turns white */
+/* Header scroll effect: when scrolled, header background becomes blue and text turns white */
 header.scrolled {
   background-color: #0077c8 !important;
 }
@@ -95,11 +94,13 @@ hr.divider {
   overflow: hidden;
   padding: 20px;
 }
+
 @media (min-width: 769px) {
   .hero-section {
     min-height: 100vh;
   }
 }
+
 @media (max-width: 768px) {
   .hero-section {
     height: auto;
@@ -107,6 +108,7 @@ hr.divider {
     gap: 10px;
   }
 }
+
 .hero-column {
   flex: 1;
   max-width: 50%;
@@ -115,23 +117,27 @@ hr.divider {
   align-items: center;
   padding: 20px;
 }
+
 @media (max-width: 768px) {
   .hero-column {
     max-width: 100%;
     padding: 10px;
   }
 }
+
 .hero-logo {
   width: 450px;
   max-width: 90%;
   height: auto;
   margin-bottom: 5px;
 }
+
 @media (max-width: 768px) {
   .hero-logo {
     width: 80%;
   }
 }
+
 .hero-text {
   font-size: 24px;
   max-width: 600px;
@@ -140,6 +146,7 @@ hr.divider {
   line-height: 1.8;
   text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
 }
+
 @media (max-width: 768px) {
   .hero-text {
     font-size: 16px;
@@ -147,6 +154,7 @@ hr.divider {
     max-width: 85%;
   }
 }
+
 .hero-button {
   display: inline-block;
   background-color: #65C51B;
@@ -164,21 +172,25 @@ hr.divider {
               inset 0px 2px 4px rgba(255,255,255,0.15);
   text-decoration: none;
 }
+
 .hero-button:hover {
   background-color: #FFA733;
 }
+
 @media (max-width: 768px) {
   .hero-button {
     padding: 10px 20px;
     font-size: 16px;
   }
 }
+
 .hero-gif {
   width: 100%;
   max-width: 500px;
   height: auto;
   border-radius: 10px;
 }
+
 @media (max-width: 768px) {
   .hero-gif {
     max-width: 100%;
@@ -189,8 +201,9 @@ hr.divider {
 .section {
   padding: 40px 20px;
   text-align: center;
-  /* Transparent so the #f2f2f2 shows from the container */
+  /* Transparent so the container's background (#f2f2f2) is visible */
 }
+
 .section .subheading {
   font-size: 24px;
   color: #0077c8;
@@ -198,6 +211,7 @@ hr.divider {
   text-align: center;
   font-family: 'Montserrat', sans-serif;
 }
+
 .section .description {
   font-size: 14px;
   color: #1c1c1c;
@@ -216,6 +230,7 @@ hr.divider {
   gap: 20px;
   margin: 20px 0;
 }
+
 .box {
   width: 300px;
   background: #F8F8F8;
@@ -226,12 +241,14 @@ hr.divider {
   min-height: 200px;
   text-align: center;
 }
+
 .box img {
   width: 100%;
   max-width: 260px;
   border-radius: 8px;
   margin-bottom: 10px;
 }
+
 .box h3 {
   color: #0077c8;
   font-size: 29px;
@@ -239,6 +256,7 @@ hr.divider {
   text-shadow: 1px 1px 3px rgba(0,0,0,0.15);
   font-family: 'Montserrat', sans-serif;
 }
+
 .box p {
   font-size: 19px;
   color: #444;
@@ -256,16 +274,19 @@ hr.divider {
   justify-content: center;
   gap: 20px;
 }
+
 .two-column .text-column {
   flex: 1;
   min-width: 300px;
   text-align: left;
 }
+
 .two-column .image-column {
   flex: 1;
   min-width: 300px;
   text-align: center;
 }
+
 .two-column img {
   width: 100%;
   max-width: 400px;
@@ -278,22 +299,26 @@ footer {
   padding: 20px;
   text-align: center;
 }
+
 .footer-divider {
   height: 4px;
   background-color: #008fd5;
   margin: 20px 0;
 }
+
 .footer-links {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 20px;
 }
+
 .footer-links a {
   color: #5C6C75;
   font-size: 1em;
   text-decoration: none;
 }
+
 .footer-contact {
   display: flex;
   flex-wrap: wrap;
@@ -303,6 +328,7 @@ footer {
   color: #5C6C75;
   font-size: 1em;
 }
+
 .footer-contact a {
   color: #007ebc;
   display: flex;
@@ -310,6 +336,7 @@ footer {
   gap: 5px;
   text-decoration: none;
 }
+
 .footer-social {
   display: flex;
   flex-wrap: wrap;
@@ -317,10 +344,12 @@ footer {
   gap: 10px;
   margin: 20px 0;
 }
+
 .footer-social img {
   width: 25px;
   height: 25px;
 }
+
 .footer-copy {
   color: #5C6C75;
   font-size: 1em;

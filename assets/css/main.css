@@ -280,8 +280,8 @@ hr.divider {
   justify-content: center;
 }
 .three-column .target-item {
-  flex: 0 0 400px;       /* Fixed width of 400px for each target item */
-  max-width: 300px;      /* Restrict container to 400px */
+  flex: 0 0 450px;       /* Fixed width of 400px for each target item */
+  max-width: 350px;      /* Restrict container to 400px */
   text-align: center;
   box-sizing: border-box;
 }

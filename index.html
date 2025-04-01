@@ -618,5 +618,15 @@
         }
       }
     </script>
+ <script>
+    window.addEventListener('scroll', function(){
+  var headerWrapper = document.getElementById('header-wrapper');
+  if(window.scrollY > 50){
+    headerWrapper.classList.add('scrolled');
+  } else {
+    headerWrapper.classList.remove('scrolled');
+  }
+});
+    <script>
   </body>
 </html>

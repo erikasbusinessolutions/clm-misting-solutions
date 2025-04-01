@@ -6,7 +6,10 @@
     <title>CLM Misting Solutions</title>
     <link rel="stylesheet" href="assets/css/main.css" />
     <!-- Load Google Fonts: Montserrat for headings, Open Sans for body text -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    >
     <style>
       /* ---------- Global Styles ---------- */
       body, html {
@@ -42,7 +45,7 @@
         justify-content: space-between;
         padding: 10px 20px;
       }
-      /* Logo image, shifted a bit right */
+      /* Logo image, shifted slightly right */
       header .logo {
         margin-left: 20px;
         max-height: 50px;
@@ -56,11 +59,11 @@
         gap: 15px;
         list-style: none;
         margin: 0;
-        padding: 0 20px 0 0; /* Right padding so the right edge aligns with the white container */
+        padding: 0 20px 0 0;
       }
       nav ul li a {
         font-size: 22px;
-        color: black; /* Default nav links in black */
+        color: black;
         font-weight: normal;
         font-family: 'Montserrat', sans-serif;
       }
@@ -105,12 +108,12 @@
       }
       
       /* ---------- Main Content Container (Frame) ---------- */
-      /* Remove top margin so the off-white container extends to the top */
+      /* Remove top margin so the white container extends to the top */
       #page-wrapper {
         background-color: #f2f2f2;
         margin: 0 auto 20px;
         max-width: 1200px;
-        padding: 140px 20px 20px; /* Increased top padding to account for header height */
+        padding: 140px 20px 20px; /* Extra top padding to account for header height */
         box-sizing: border-box;
       }
       
@@ -120,7 +123,7 @@
         height: 4px;
         background-color: #008fd5;
         border: none;
-        margin: 20px 0; /* Tighter margins */
+        margin: 20px 0;
       }
       
       /* ---------- Hero Section ---------- */
@@ -325,7 +328,7 @@
       }
       .three-column .target-item img {
         width: 100%;
-        max-width: 400px; /* Change this value as desired */
+        max-width: 400px; /* Adjust as desired for non-scrolling size */
         height: auto;
         margin-bottom: 10px;
       }
@@ -612,6 +615,7 @@
           headerWrapper.classList.remove('scrolled');
         }
       });
+      
       function toggleMenu() {
         var navList = document.getElementById('nav-list');
         if (navList.style.display === 'block') {

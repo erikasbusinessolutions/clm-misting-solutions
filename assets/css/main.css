@@ -26,7 +26,7 @@ header {
   align-items: center;
   justify-content: space-between;
   background-color: rgba(242,242,242,0.9); /* Light background (semi-transparent) */
-  padding: 20px 20px;
+  padding: 10px 20px;
   position: fixed;  /* Fixed header */
   top: 0;
   left: 0;
@@ -35,13 +35,15 @@ header {
   transition: background-color 0.3s ease;
 }
 
+/* Use an image logo (HTML must be updated to use an <img> with class="logo") */
 header .logo {
-  font-size: 30px;
-  font-weight: bold;
-  color: #0077c8;
-  font-family: 'Montserrat', sans-serif;
+  max-height: 50px;
+  /* Optional: ensure the logo scales well */
+  width: auto;
+  object-fit: contain;
 }
 
+/* Navigation styles */
 nav ul {
   display: flex;
   gap: 15px;
@@ -51,14 +53,14 @@ nav ul {
 }
 
 nav ul li a {
-  font-size: 22px;       /* Larger font size */
-  color: #0077c8;
-  font-weight: 600;
-  text-decoration: none; /* No underline by default */
+  font-size: 22px;       
+  color: black;            /* Updated to black */
+  font-weight: normal;     /* Not bold */
+  text-decoration: none;   /* Underline only on active state */
   font-family: 'Montserrat', sans-serif;
 }
 
-/* Active navigation link: thick blue underline */
+/* Active navigation link: keep underline style */
 nav ul li a.active {
   text-decoration: underline;
   text-decoration-thickness: 3px;
@@ -69,7 +71,10 @@ nav ul li a.active {
 header.scrolled {
   background-color: #0077c8 !important;
 }
-header.scrolled .logo,
+header.scrolled .logo {
+  /* For an image, this may not apply, but if fallback text is used, it becomes white */
+  filter: brightness(0) invert(1);
+}
 header.scrolled nav ul li a {
   color: #fff;
 }
@@ -92,7 +97,7 @@ hr.divider {
   justify-content: space-between;
   gap: 20px;
   width: 100%;
-  padding: 10px;
+  padding: 20px;
   background: linear-gradient(to bottom, rgba(0,119,200,0.9), rgba(0,174,239,0.9));
   color: white;
   box-sizing: border-box;
@@ -190,14 +195,14 @@ hr.divider {
   /* Transparent so the container's background (#f2f2f2) shows */
 }
 .section .subheading {
-  font-size: 28px;
+  font-size: 24px;
   color: #0077c8;
   margin-bottom: 10px;
   text-align: center;
   font-family: 'Montserrat', sans-serif;
 }
 .section .description {
-  font-size: 18px;
+  font-size: 14px;
   color: #1c1c1c;
   margin: 0 auto;
   max-width: 800px;
@@ -266,27 +271,28 @@ hr.divider {
 }
 .two-column img {
   width: 100%;
-  max-width: 600px;
+  max-width: 400px;
   border-radius: 8px;
 }
 
 /* ---------- Three-Column Layout (Target Sectors) ---------- */
 .three-column {
   display: flex;
-  flex-wrap: wrap; /* Keep them in one row */
-  gap: 10px;
-  margin: 10px 0;
+  flex-wrap: nowrap; /* Keep in one row */
+  overflow-x: auto;  /* Allow horizontal scrolling if necessary */
+  gap: 20px;
+  margin: 20px 0;
   justify-content: center;
 }
 .three-column .target-item {
-  flex: 0 0 50px;       /* Fixed width of 400px for each target item */
-  max-width: 400px;      /* Restrict container to 400px */
+  flex: 0 0 600px;  /* Fixed width of 600px for each target item */
   text-align: center;
   box-sizing: border-box;
 }
 .three-column .target-item img {
   width: 100%;
-  max-width: 400px;      /* All images will be up to 400px wide */
+  /* All images now are set to occupy 600px if available */
+  max-width: 600px;
   height: auto;
   margin-bottom: 10px;
 }

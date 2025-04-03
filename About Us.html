@@ -6,9 +6,12 @@
     <title>CLM Misting Solutions - About Us</title>
     <link rel="stylesheet" href="assets/css/main.css" />
     <!-- Load Google Fonts: Montserrat for headings, Open Sans for body text -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    >
+    <!-- Page-Specific Overrides for About Us -->
     <style>
-      /* ---------- Page-Specific Overrides for About Us ---------- */
       .overview-section {
         background: #F8F8F8;
         padding: 20px;
@@ -29,8 +32,8 @@
         font-size: 18px;
         color: #444;
         margin: 0;
-        font-family: 'Open Sans', sans-serif;
         text-align: center;
+        font-family: 'Open Sans', sans-serif;
       }
       .video-section {
         margin-bottom: 20px;
@@ -116,21 +119,25 @@
     </script>
   </head>
   <body>
-    <!-- Fixed Header (Same as Other Pages) -->
-    <header>
-      <div class="logo">CLM Misting Solutions</div>
-      <nav>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="About Us.html" class="active">About Us</a></li>
-          <li><a href="Products.html">Products</a></li>
-          <li><a href="Installation & Setup.html">Installation &amp; Setup</a></li>
-          <li><a href="FAQ.html">FAQ</a></li>
-          <li><a href="Contact Us.html">Contact Us</a></li>
-        </ul>
-      </nav>
-    </header>
-    
+    <!-- Header Wrapper -->
+    <div id="header-wrapper">
+      <header>
+        <button class="menu-toggle" onclick="toggleMenu()">&#9776;</button>
+        <!-- Update the logo to use an image instead of text -->
+        <img src="https://github.com/erikasbusinessolutions/clm-misting-solutions/blob/main/Images/Logos/Transparent_Original.png?raw=true" alt="CLM Logo" class="logo">
+        <nav>
+          <ul id="nav-list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="About Us.html" class="active">About Us</a></li>
+            <li><a href="Products.html">Products</a></li>
+            <li><a href="Installation & Setup.html">Installation &amp; Setup</a></li>
+            <li><a href="FAQ.html">FAQ</a></li>
+            <li><a href="Contact Us.html">Contact Us</a></li>
+          </ul>
+        </nav>
+      </header>
+    </div>
+
     <!-- Main Content Container (Frame) -->
     <div id="page-wrapper">
       <!-- 1. Overview Section -->
@@ -212,7 +219,8 @@
         <p>Coming Soon!</p>
       </div>
     </div>
-    
+
+    <!-- JavaScript for Dropdowns and Header Scroll Effect -->
     <script>
       function toggleDropdown(id) {
         var element = document.getElementById(id);
@@ -222,17 +230,24 @@
           element.style.display = "none";
         }
       }
-    </script>
-    
-    <script>
+      
       window.addEventListener('scroll', function(){
-        var header = document.querySelector('header');
+        var headerWrapper = document.getElementById('header-wrapper');
         if(window.scrollY > 50){
-          header.classList.add('scrolled');
+          headerWrapper.classList.add('scrolled');
         } else {
-          header.classList.remove('scrolled');
+          headerWrapper.classList.remove('scrolled');
         }
       });
+      
+      function toggleMenu() {
+        var navList = document.getElementById('nav-list');
+        if (navList.style.display === 'block') {
+          navList.style.display = 'none';
+        } else {
+          navList.style.display = 'block';
+        }
+      }
     </script>
   </body>
 </html>

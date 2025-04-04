@@ -3,12 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Contact Us | CLM Misting Solutions</title>
+    <title>CLM Misting Solutions</title>
     <link rel="stylesheet" href="assets/css/main.css" />
     <!-- Load Google Fonts: Montserrat for headings, Open Sans for body text -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
-    
-    <!-- Global Styles (matching index.html) -->
     <style>
       /* ---------- Global Styles ---------- */
       body, html {
@@ -25,7 +23,7 @@
         text-decoration: none;
       }
       
-      /* ---------- Header Wrapper ---------- */
+      /* ---------- Header Wrapper (matches off-white container width) ---------- */
       #header-wrapper {
         position: fixed;
         top: 0;
@@ -36,24 +34,29 @@
         z-index: 1001;
         background-color: rgba(242,242,242,0.9);
       }
+      
+      /* Header inner styling */
       #header-wrapper header {
         display: flex;
         align-items: center;
         justify-content: space-between;
-        padding: 10px 10px;
+        padding: 10px 10px; /* Reduced horizontal padding */
       }
-      #header-wrapper header .logo {
+      /* Logo image: shifted slightly right */
+      header .logo {
         margin-left: 10px;
         max-height: 50px;
         width: auto;
         object-fit: contain;
       }
+      
+      /* Navigation styles */
       nav ul {
         display: flex;
         gap: 15px;
         list-style: none;
         margin: 0;
-        padding: 0 10px 0 0;
+        padding: 0 10px 0 0; /* Right padding to align right edge */
       }
       nav ul li a {
         font-size: 22px;
@@ -66,31 +69,15 @@
         text-decoration-thickness: 3px;
         text-decoration-color: #0077c8;
       }
-      /* When scrolled, change active underline to white */
-      #header-wrapper.scrolled nav ul li a.active {
-        text-decoration-color: #fff;
-      }
       
-      /* ---------- Hamburger Menu Styles ---------- */
+      /* Mobile: Hamburger menu button; nav hidden by default */
       .menu-toggle {
+        display: none;
         background: none;
         border: none;
+        font-size: 24px;
+        margin-right: 10px;
         cursor: pointer;
-        padding: 0;
-        /* Hide the text fallback */
-      }
-      /* Remove default text and create hamburger using spans */
-      .menu-toggle span {
-        display: block;
-        width: 25px;
-        height: 3px;
-        margin: 4px 0;
-        background-color: black;
-        transition: background-color 0.3s ease;
-      }
-      /* When scrolled, change hamburger bars to white */
-      #header-wrapper.scrolled .menu-toggle span {
-        background-color: #fff;
       }
       @media (max-width: 768px) {
         .menu-toggle {
@@ -108,6 +95,8 @@
           padding: 10px 20px;
         }
       }
+      
+      /* Header scroll effect */
       #header-wrapper.scrolled {
         background-color: #0077c8;
       }
@@ -116,11 +105,12 @@
       }
       
       /* ---------- Main Content Container (Frame) ---------- */
+      /* Remove top margin so the white container extends to the top */
       #page-wrapper {
         background-color: #f2f2f2;
         margin: 0 auto 20px;
         max-width: 1200px;
-        padding: 80px 20px 20px;
+        padding: 80px 20px 20px; /* Reduced top padding so hero moves up */
         box-sizing: border-box;
       }
       
@@ -131,6 +121,231 @@
         background-color: #008fd5;
         border: none;
         margin: 20px 0;
+      }
+      
+      /* ---------- Hero Section ---------- */
+      .hero-section {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+        width: 100%;
+        padding: 20px;
+        background: linear-gradient(to bottom, rgba(0,119,200,0.9), rgba(0,174,239,0.9));
+        color: white;
+        box-sizing: border-box;
+        overflow: hidden;
+      }
+      @media (max-width: 768px) {
+        .hero-section {
+          flex-direction: column;
+          gap: 10px;
+          padding: 10px;
+        }
+      }
+      .hero-column {
+        flex: 1 1 50%;
+        max-width: 50%;
+        box-sizing: border-box;
+        padding: 20px;
+      }
+      @media (max-width: 768px) {
+        .hero-column {
+          max-width: 100%;
+          padding: 10px;
+        }
+      }
+      .hero-logo {
+        width: 100%;
+        max-width: 450px;
+        height: auto;
+        margin-bottom: 5px;
+      }
+      @media (max-width: 768px) {
+        .hero-logo {
+          width: 80%;
+        }
+      }
+      .hero-text {
+        font-size: 24px;
+        max-width: 600px;
+        margin: 10px auto;
+        font-weight: bold;
+        line-height: 1.8;
+        text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+      }
+      @media (max-width: 768px) {
+        .hero-text {
+          font-size: 16px;
+          margin: 0 auto;
+          max-width: 85%;
+        }
+      }
+      .hero-button {
+        display: inline-block;
+        background-color: #65C51B;
+        color: white;
+        padding: 20px 70px;
+        font-size: 24px;
+        font-weight: bold;
+        border: none;
+        cursor: pointer;
+        margin-top: 10px;
+        border-radius: 8px;
+        transition: background 0.3s ease, box-shadow 0.3s ease;
+        text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+        text-decoration: none;
+        box-shadow: inset 0px -2px 4px rgba(0,0,0,0.2),
+                    inset 0px 2px 4px rgba(255,255,255,0.15);
+      }
+      .hero-button:hover {
+        background-color: #FFA733;
+      }
+      @media (max-width: 768px) {
+        .hero-button {
+          padding: 10px 20px;
+          font-size: 16px;
+        }
+      }
+      .hero-gif {
+        display: block;
+        width: 100%;
+        max-width: 500px;
+        height: auto;
+        border-radius: 10px;
+        margin: 0 auto;
+      }
+      @media (max-width: 768px) {
+        .hero-gif {
+          max-width: 100%;
+        }
+      }
+      
+      /* ---------- Section Base Styles ---------- */
+      .section {
+        padding: 20px 20px; /* Tighter vertical padding */
+        text-align: center;
+      }
+      .section .subheading {
+        font-size: 24px;
+        color: #0077c8;
+        margin-bottom: 10px;
+        text-align: center;
+        font-family: 'Montserrat', sans-serif;
+      }
+      .section .description {
+        font-size: 14px;
+        color: #1c1c1c;
+        margin: 0 auto;
+        max-width: 800px;
+        line-height: 1.6;
+        text-align: center;
+        font-family: 'Open Sans', sans-serif;
+      }
+      
+      /* ---------- Section 3: 3 Boxes ---------- */
+      .boxes-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+        margin: 20px 0;
+      }
+      .box {
+        width: 300px;
+        background: #F8F8F8;
+        padding: 15px;
+        border-radius: 10px;
+        box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+        box-sizing: border-box;
+        min-height: 200px;
+        text-align: center;
+      }
+      .box img {
+        width: 100%;
+        max-width: 260px;
+        border-radius: 8px;
+        margin-bottom: 10px;
+      }
+      .box h3 {
+        color: #0077c8;
+        font-size: 29px;
+        margin: 0 0 5px 0;
+        text-shadow: 1px 1px 3px rgba(0,0,0,0.15);
+        font-family: 'Montserrat', sans-serif;
+      }
+      .box p {
+        font-size: 19px;
+        color: #444;
+        line-height: 1.4;
+        max-width: 260px;
+        margin: 0 auto;
+        font-family: 'Open Sans', sans-serif;
+      }
+      
+      /* ---------- Two-Column Layout (Sections 4 & 6) ---------- */
+      .two-column {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+      }
+      .two-column .text-column {
+        flex: 1;
+        min-width: 300px;
+        text-align: left;
+      }
+      .two-column .image-column {
+        flex: 1;
+        min-width: 300px;
+        text-align: center;
+      }
+      .two-column img {
+        width: 100%;
+        max-width: 400px;
+        border-radius: 8px;
+      }
+      
+      /* ---------- Three-Column Layout (Target Sectors) ---------- */
+      .three-column {
+        display: flex;
+        flex-wrap: wrap; /* Allow wrapping on mobile */
+        justify-content: space-between;
+        gap: 20px;
+        margin: 20px 0;
+      }
+      .three-column .target-item {
+        flex: 1 1 calc(33.333% - 20px);
+        max-width: calc(33.333% - 20px);
+        text-align: center;
+        box-sizing: border-box;
+      }
+      .three-column .target-item img {
+        width: 100%;
+        max-width: 400px; /* Adjust as desired; 400px here ensures no horizontal scroll */
+        height: auto;
+        margin-bottom: 10px;
+      }
+      @media (max-width: 768px) {
+        .three-column .target-item {
+          flex: 1 1 100%;
+          max-width: 100%;
+        }
+      }
+      .three-column .target-item h3 {
+        font-size: 22px;
+        color: #0077c8;
+        margin: 10px 0 5px;
+        font-family: 'Montserrat', sans-serif;
+      }
+      .three-column .target-item p {
+        font-size: 16px;
+        color: #444;
+        margin: 0;
+        font-family: 'Open Sans', sans-serif;
       }
       
       /* ---------- Footer ---------- */
@@ -187,78 +402,10 @@
         font-size: 1em;
         padding: 5px;
       }
-    </style>
-    
-    <!-- Contact Form Page-Specific Styles -->
-    <style>
-      .contact-container {
-        max-width: 600px;
-        background: #FFFFFF;
-        padding: 30px;
-        margin: 40px auto;
-        border-radius: 8px;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-        border: 3px solid #007EBC;
-      }
-      .contact-container h1 {
-        text-align: center;
-        color: #005C89;
-        font-family: 'Montserrat', sans-serif;
-      }
-      .contact-container p {
-        text-align: center;
-        font-size: 16px;
-        margin-bottom: 20px;
-        font-family: 'Open Sans', sans-serif;
-      }
-      .contact-container label {
-        font-weight: bold;
-        color: #005C89;
-        display: block;
-        margin: 10px 0 5px;
-        font-family: 'Montserrat', sans-serif;
-      }
-      .contact-container input,
-      .contact-container select,
-      .contact-container textarea {
-        width: 100%;
-        padding: 10px;
-        margin-bottom: 15px;
-        border: 1px solid #007EBC;
-        border-radius: 5px;
-        font-size: 16px;
-        font-family: 'Open Sans', sans-serif;
-      }
-      .contact-container input[type="checkbox"] {
-        width: auto;
-        margin-right: 10px;
-      }
-      .contact-container .btn {
-        background: #65C51B;
-        color: white;
-        padding: 12px;
-        border: none;
-        width: 100%;
-        font-size: 18px;
-        cursor: pointer;
-        border-radius: 5px;
-        font-family: 'Montserrat', sans-serif;
-      }
-      .contact-container .btn:hover {
-        background: #5AB014;
-      }
-      @media (max-width: 768px) {
-        .contact-container h1 {
-          font-size: 20px;
-        }
-        .contact-container p, 
-        .contact-container label,
-        .contact-container input,
-        .contact-container select,
-        .contact-container textarea,
-        .contact-container .btn {
-          font-size: 14px;
-        }
+      
+      /* ---------- Header Scroll (applied to header-wrapper) ---------- */
+      #header-wrapper.scrolled {
+        background-color: #0077c8;
       }
     </style>
   </head>
@@ -266,21 +413,16 @@
     <!-- Header Wrapper -->
     <div id="header-wrapper">
       <header>
-        <!-- Updated hamburger button using spans -->
-        <button class="menu-toggle" onclick="toggleMenu()">
-          <span class="bar"></span>
-          <span class="bar"></span>
-          <span class="bar"></span>
-        </button>
+        <button class="menu-toggle" onclick="toggleMenu()">&#9776;</button>
         <img src="https://github.com/erikasbusinessolutions/clm-misting-solutions/blob/main/Images/Logos/Transparent_Original.png?raw=true" alt="CLM Logo" class="logo">
         <nav>
           <ul id="nav-list">
-            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html" class="active">Home</a></li>
             <li><a href="About Us.html">About Us</a></li>
             <li><a href="Products.html">Products</a></li>
             <li><a href="Installation & Setup.html">Installation &amp; Setup</a></li>
             <li><a href="FAQ.html">FAQ</a></li>
-            <li><a href="Contact Us.html" class="active">Contact Us</a></li>
+            <li><a href="Contact Us.html">Contact Us</a></li>
           </ul>
         </nav>
       </header>
@@ -288,39 +430,128 @@
     
     <!-- Main Content Container (Frame) -->
     <div id="page-wrapper">
-      <div class="contact-container">
-        <h1>Contact Us</h1>
-        <p>Have questions? Get in touch with us! Whether you're looking for product information, purchasing details, or general inquiries, we're happy to help.</p>
-        <form action="#" method="POST">
-          <label for="firstName">First Name*</label>
-          <input type="text" id="firstName" name="firstName" placeholder="Ex. Jane" required>
-          
-          <label for="lastName">Last Name*</label>
-          <input type="text" id="lastName" name="lastName" placeholder="Ex. Smith" required>
-          
-          <label for="email">Email*</label>
-          <input type="email" id="email" name="email" placeholder="Ex. jane.smith@example.com" required>
-          
-          <label for="phone">Phone Number*</label>
-          <input type="tel" id="phone" name="phone" placeholder="(555) 555-5555" required>
-          <input type="checkbox" id="smsConsent" name="smsConsent">
-          <label for="smsConsent" style="display: inline;">Yes! You can text me service reminders and updates.</label>
-          
-          <label for="zip">Zip/Postal Code*</label>
-          <input type="text" id="zip" name="zip" placeholder="Ex. 95765" required>
-          
-          <label for="message">Your Message*</label>
-          <textarea id="message" name="message" placeholder="Have questions about our misting systems? Need help choosing the right solution? Let us know how we can assist you!" rows="4" required></textarea>
-          
-          <input type="checkbox" id="emailConsent" name="emailConsent">
-          <label for="emailConsent" style="display: inline;">By entering your email address, you agree to receive updates and promotions. You can unsubscribe anytime.</label>
-          <br><br>
-          
-          <button type="submit" class="btn">Submit Inquiry</button>
-        </form>
-      </div>
+      <!-- Hero Section -->
+      <section id="hero">
+        <div class="hero-section">
+          <div class="hero-column">
+            <img src="https://github.com/erikasbusinessolutions/clm-image-hosting/blob/main/Hero.png?raw=true" alt="CLM Hero" class="hero-logo">
+            <p class="hero-text">Premium Mosquito Control for Outdoor Comfort</p>
+            <a href="https://sites.google.com/view/clmmistingsolutions-testmode/contact-us?" target="_blank" class="hero-button">Contact Us</a>
+          </div>
+          <div class="hero-column">
+            <img src="https://github.com/erikasbusinessolutions/clm-image-hosting/blob/main/Hero.gif?raw=true" alt="Mosquito Control GIF" class="hero-gif">
+          </div>
+        </div>
+      </section>
       
-      <!-- Footer (moved inside #page-wrapper) -->
+      <hr class="divider">
+      
+      <!-- Section 2: Why Choose CLM Misting Solutions? -->
+      <section id="why-choose" class="section">
+        <h2 class="subheading">Why Choose CLM Misting Solutions?</h2>
+        <p class="description">
+          CLM’s high-quality professional misting system delivers automated mosquito and fly protection with minimal upkeep, ensuring a comfortable outdoor space year-round. The system can be installed professionally or by a DIY Homeowner.
+        </p>
+      </section>
+      
+      <hr class="divider">
+      
+      <!-- Section 3: 3 Boxes -->
+      <section id="features" class="section">
+        <div class="boxes-container">
+          <div class="box">
+            <img src="https://github.com/erikasbusinessolutions/clm-misting-solutions/blob/main/Images/First_Page/Clock.png?raw=true" alt="Automated Protection">
+            <h3>Automated Protection</h3>
+            <p>
+              Our system has the ability to run on any schedule the customer chooses, giving them complete control at their fingertips to effortlessly eliminate mosquitoes and flies without daily intervention.
+            </p>
+          </div>
+          <div class="box">
+            <img src="https://github.com/erikasbusinessolutions/clm-misting-solutions/blob/main/Images/First_Page/Plant.png?raw=true" alt="Eco-Friendly">
+            <h3>Eco-Friendly</h3>
+            <p>
+              There are several botanical and permethrin labeled products that work well with our systems.
+            </p>
+          </div>
+          <div class="box">
+            <img src="https://github.com/erikasbusinessolutions/clm-misting-solutions/blob/main/Images/First_Page/Weather.png?raw=true" alt="Weather-Resistant">
+            <h3>Weather-Resistant</h3>
+            <p>
+              Built to withstand outdoor conditions, ensuring long-term performance.
+            </p>
+          </div>
+        </div>
+      </section>
+      
+      <hr class="divider">
+      
+      <!-- Section 4: Built for Performance, Designed for Convenience -->
+      <section id="performance" class="section">
+        <div class="two-column">
+          <div class="text-column">
+            <h2 class="subheading" style="text-align:left;">Built for Performance, Designed for Convenience</h2>
+            <p class="description" style="text-align:left;">
+              Not all misting systems are created equal. CLM’s advanced misting technology delivers an ultra-fine mist that targets mosquitoes and flies. Our durable, weather-resistant components are built to last, ensuring reliable, long-term mosquito and fly protection.
+            </p>
+          </div>
+          <div class="image-column">
+            <img src="https://github.com/erikasbusinessolutions/clm-misting-solutions/blob/main/Images/First_Page/System_Drum.png?raw=true" alt="Performance Image">
+          </div>
+        </div>
+      </section>
+      
+      <hr class="divider">
+      
+      <!-- Section 5: Customizable Protection for Every Space -->
+      <section id="customizable" class="section">
+        <h2 class="subheading">Customizable Protection for Every Space</h2>
+        <p class="description">
+          Every installation is unique, and so is every mosquito and fly misting system. That’s why we provide customized solutions tailored to your property. Whether you need coverage for a small patio, residential backyard, an equine facility, or a commercial space, our system is designed to adapt to your specific needs. With flexible configurations, we ensure targeted protection exactly where you need it most.
+        </p>
+      </section>
+      
+      <hr class="divider">
+      
+      <!-- Target Sectors Section (Three-Column) -->
+      <section id="target-sectors" class="section">
+        <div class="three-column">
+          <div class="target-item">
+            <img src="https://github.com/erikasbusinessolutions/clm-misting-solutions/blob/main/Images/First_Page/Patio.png?raw=true" alt="Residential Homes">
+            <h3>Residential Homes</h3>
+            <p>Enjoy your backyard without the hassle of mosquitoes.</p>
+          </div>
+          <div class="target-item">
+            <img src="https://github.com/erikasbusinessolutions/clm-misting-solutions/blob/main/Images/First_Page/Equine.png?raw=true" alt="Equine Centers">
+            <h3>Equine Centers</h3>
+            <p>Large-scale solutions for lasting protection against mosquitoes and flies.</p>
+          </div>
+          <div class="target-item">
+            <img src="https://github.com/erikasbusinessolutions/clm-misting-solutions/blob/main/Images/First_Page/Restaurant.png?raw=true" alt="Outdoor Dining &amp; Restaurants">
+            <h3>Outdoor Dining &amp; Restaurants</h3>
+            <p>Keep customers comfortable and pest-free.</p>
+          </div>
+        </div>
+      </section>
+      
+      <hr class="divider">
+      
+      <!-- Section 6: Fast, Simple Installation -->
+      <section id="installation" class="section">
+        <div class="two-column">
+          <div class="text-column">
+            <h2 class="subheading" style="text-align:left;">Fast, Simple Installation</h2>
+            <p class="description" style="text-align:left;">
+              Get set up in no time! Our system is designed for easy DIY installation or professional setup based on your needs. With straightforward instructions and expert support, you’ll have your misting system up and running in no time—keeping mosquitoes and flies away from day one.
+            </p>
+          </div>
+          <div class="image-column">
+            <img src="https://github.com/erikasbusinessolutions/clm-misting-solutions/blob/main/Images/First_Page/Installation.png?raw=true" alt="Installation Image">
+          </div>
+        </div>
+      </section>
+      
+      
+      <!-- Footer -->
       <footer>
         <div class="footer-divider"></div>
         <div class="footer-links">

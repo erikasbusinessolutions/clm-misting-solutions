@@ -70,16 +70,31 @@
         text-decoration-thickness: 3px;
         text-decoration-color: #0077c8;
       }
+      /* When scrolled, change active underline to white */
+      #header-wrapper.scrolled nav ul li a.active {
+        text-decoration-color: #fff;
+      }
       
-      /* Mobile: Hamburger menu */
+      /* ---------- Hamburger Menu Styles ---------- */
       .menu-toggle {
-        display: none;
         background: none;
         border: none;
-        font-size: 24px;
-        margin-right: 10px;
         cursor: pointer;
+        padding: 0;
       }
+      .menu-toggle span {
+        display: block;
+        width: 25px;
+        height: 3px;
+        margin: 4px 0;
+        background-color: black;
+        transition: background-color 0.3s ease;
+      }
+      /* When scrolled, change hamburger bars to white */
+      #header-wrapper.scrolled .menu-toggle span {
+        background-color: #fff;
+      }
+      
       @media (max-width: 768px) {
         .menu-toggle {
           display: block;
@@ -97,7 +112,6 @@
         }
       }
       
-      /* Header scroll effect */
       #header-wrapper.scrolled {
         background-color: #0077c8;
       }
@@ -281,7 +295,12 @@
     <!-- Header Wrapper -->
     <div id="header-wrapper">
       <header>
-        <button class="menu-toggle" onclick="toggleMenu()">&#9776;</button>
+        <!-- Updated hamburger menu with spans -->
+        <button class="menu-toggle" onclick="toggleMenu()">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
         <img src="https://github.com/erikasbusinessolutions/clm-misting-solutions/blob/main/Images/Logos/Transparent_Original.png?raw=true" alt="CLM Logo" class="logo">
         <nav>
           <ul id="nav-list">
@@ -378,7 +397,7 @@
       </div>
     </div>
     
-    <!-- Footer -->
+    <!-- Footer (inside #page-wrapper) -->
     <footer>
       <div class="footer-divider"></div>
       <div class="footer-links">

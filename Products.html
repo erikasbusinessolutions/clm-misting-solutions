@@ -36,8 +36,6 @@
         z-index: 1001;
         background-color: rgba(242,242,242,0.9);
       }
-      
-      /* Header inner styling */
       #header-wrapper header {
         display: flex;
         align-items: center;
@@ -50,8 +48,6 @@
         width: auto;
         object-fit: contain;
       }
-      
-      /* Navigation styles */
       nav ul {
         display: flex;
         gap: 15px;
@@ -70,15 +66,29 @@
         text-decoration-thickness: 3px;
         text-decoration-color: #0077c8;
       }
+      /* When scrolled, change active underline to white */
+      #header-wrapper.scrolled nav ul li a.active {
+        text-decoration-color: #fff;
+      }
       
-      /* Mobile: Hamburger menu */
+      /* ---------- Hamburger Menu Styles ---------- */
       .menu-toggle {
-        display: none;
         background: none;
         border: none;
-        font-size: 24px;
-        margin-right: 10px;
         cursor: pointer;
+        padding: 0;
+      }
+      .menu-toggle span {
+        display: block;
+        width: 25px;
+        height: 3px;
+        margin: 4px 0;
+        background-color: black;
+        transition: background-color 0.3s ease;
+      }
+      /* Change hamburger bars to white when scrolled */
+      #header-wrapper.scrolled .menu-toggle span {
+        background-color: #fff;
       }
       @media (max-width: 768px) {
         .menu-toggle {
@@ -96,8 +106,6 @@
           padding: 10px 20px;
         }
       }
-      
-      /* Header scroll effect */
       #header-wrapper.scrolled {
         background-color: #0077c8;
       }
@@ -173,6 +181,8 @@
         height: 25px;
       }
       .footer-copy {
+        width: 100%;
+        text-align: center;
         color: #5C6C75;
         font-size: 1em;
         padding: 5px;
@@ -246,13 +256,59 @@
       .quote-btn:hover {
         background: #FFA733;
       }
+      
+      /* ---------- Mobile Category Filter ---------- */
+      /* Hide desktop filter buttons on mobile */
+      @media (max-width: 768px) {
+        .filter-container {
+          display: none;
+        }
+      }
+      
+      /* Mobile dropdown for categories */
+      .mobile-filter-select {
+        display: none;
+      }
+      @media (max-width: 768px) {
+        .mobile-filter-select {
+          display: block;
+          width: 90%;
+          max-width: 400px;
+          margin: 10px auto;
+          padding: 10px;
+          font-size: 16px;
+          font-family: 'Montserrat', sans-serif;
+          background-color: #0077c8;
+          color: white;
+          border: none;
+          border-radius: 5px;
+        }
+      }
     </style>
+    
+    <script>
+      function filterCategory(category) {
+        const sections = document.querySelectorAll('.product-section');
+        sections.forEach(section => {
+          section.style.display = (category === 'all' || section.dataset.category === category) ? 'block' : 'none';
+        });
+      }
+      
+      function mobileFilterChange(selectObj) {
+        filterCategory(selectObj.value);
+      }
+    </script>
   </head>
   <body>
     <!-- Header Wrapper -->
     <div id="header-wrapper">
       <header>
-        <button class="menu-toggle" onclick="toggleMenu()">&#9776;</button>
+        <!-- Updated hamburger menu button using spans -->
+        <button class="menu-toggle" onclick="toggleMenu()">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
         <img src="https://github.com/erikasbusinessolutions/clm-misting-solutions/blob/main/Images/Logos/Transparent_Original.png?raw=true" alt="CLM Logo" class="logo">
         <nav>
           <ul id="nav-list">
@@ -269,16 +325,28 @@
     
     <!-- Main Content Container (Frame) -->
     <div id="page-wrapper">
+      <!-- Desktop Category Filter -->
+      <div class="filter-container">
+        <button class="filter-btn" onclick="filterCategory('all')">All Parts</button>
+        <button class="filter-btn" onclick="filterCategory('main-equipment')">Main Equipment</button>
+        <button class="filter-btn" onclick="filterCategory('installation-parts')">Installation Parts</button>
+        <button class="filter-btn" onclick="filterCategory('nozzles-and-fittings')">Nozzles &amp; Fittings</button>
+        <button class="filter-btn" onclick="filterCategory('tubing-and-connectors')">Tubing &amp; Connectors</button>
+        <button class="filter-btn" onclick="filterCategory('accessories-and-replacement-parts')">Accessories &amp; Replacement Parts</button>
+      </div>
+      
+      <!-- Mobile Category Dropdown -->
+      <select class="mobile-filter-select" onchange="mobileFilterChange(this)">
+        <option value="all">All Parts</option>
+        <option value="main-equipment">Main Equipment</option>
+        <option value="installation-parts">Installation Parts</option>
+        <option value="nozzles-and-fittings">Nozzles &amp; Fittings</option>
+        <option value="tubing-and-connectors">Tubing &amp; Connectors</option>
+        <option value="accessories-and-replacement-parts">Accessories &amp; Replacement Parts</option>
+      </select>
+      
+      <!-- Product Sections -->
       <section id="products" class="section">
-        <div class="filter-container">
-          <button class="filter-btn" onclick="filterCategory('all')">All Parts</button>
-          <button class="filter-btn" onclick="filterCategory('main-equipment')">Main Equipment</button>
-          <button class="filter-btn" onclick="filterCategory('installation-parts')">Installation Parts</button>
-          <button class="filter-btn" onclick="filterCategory('nozzles-and-fittings')">Nozzles &amp; Fittings</button>
-          <button class="filter-btn" onclick="filterCategory('tubing-and-connectors')">Tubing &amp; Connectors</button>
-          <button class="filter-btn" onclick="filterCategory('accessories-and-replacement-parts')">Accessories &amp; Replacement Parts</button>
-        </div>
-        
         <div class="product-section" data-category="main-equipment">
           <h2 class="category-title">Main Equipment</h2>
           <div class="product-grid">
@@ -509,7 +577,7 @@
       </section>
     </div>
     
-    <!-- Footer -->
+    <!-- Footer (inside #page-wrapper for consistent white background) -->
     <footer>
       <div class="footer-divider"></div>
       <div class="footer-links">

@@ -6,10 +6,7 @@
     <title>Contact Us | CLM Misting Solutions</title>
     <link rel="stylesheet" href="assets/css/main.css" />
     <!-- Load Google Fonts: Montserrat for headings, Open Sans for body text -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;700&display=swap"
-      rel="stylesheet"
-    >
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
     
     <!-- Global Styles (matching index.html) -->
     <style>
@@ -69,13 +66,31 @@
         text-decoration-thickness: 3px;
         text-decoration-color: #0077c8;
       }
+      /* When scrolled, change active underline to white */
+      #header-wrapper.scrolled nav ul li a.active {
+        text-decoration-color: #fff;
+      }
+      
+      /* ---------- Hamburger Menu Styles ---------- */
       .menu-toggle {
-        display: none;
         background: none;
         border: none;
-        font-size: 24px;
-        margin-right: 10px;
         cursor: pointer;
+        padding: 0;
+        /* Hide the text fallback */
+      }
+      /* Remove default text and create hamburger using spans */
+      .menu-toggle span {
+        display: block;
+        width: 25px;
+        height: 3px;
+        margin: 4px 0;
+        background-color: black;
+        transition: background-color 0.3s ease;
+      }
+      /* When scrolled, change hamburger bars to white */
+      #header-wrapper.scrolled .menu-toggle span {
+        background-color: #fff;
       }
       @media (max-width: 768px) {
         .menu-toggle {
@@ -251,7 +266,12 @@
     <!-- Header Wrapper -->
     <div id="header-wrapper">
       <header>
-        <button class="menu-toggle" onclick="toggleMenu()">&#9776;</button>
+        <!-- Updated hamburger button using spans -->
+        <button class="menu-toggle" onclick="toggleMenu()">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
         <img src="https://github.com/erikasbusinessolutions/clm-misting-solutions/blob/main/Images/Logos/Transparent_Original.png?raw=true" alt="CLM Logo" class="logo">
         <nav>
           <ul id="nav-list">
